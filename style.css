@@ -377,7 +377,7 @@ a { color: inherit; text-decoration: none; }
   }
   .nav-links a { padding: 14px 24px; width: 100%; font-size: 15px; }
   .hamburger { display: flex; }
-  .btn-nav { display: none; }
+  .btn-nav { padding: 5px 10px; font-size: 10px; }
 }
 
 /* ── HERO ── */
