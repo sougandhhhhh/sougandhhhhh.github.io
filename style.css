@@ -360,14 +360,21 @@ a { color: inherit; text-decoration: none; }
     gap: 0;
     padding: 8px 0 16px;
     transform: translateY(-110%);
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0s linear 0.28s;
     z-index: 200;
     max-height: calc(100vh - var(--nav-h) - env(safe-area-inset-top, 0px));
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     will-change: transform;
   }
-  .nav-links.open { transform: translateY(0); }
+  .nav-links.open {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0s linear 0s;
+  }
   .nav-links a { padding: 14px 24px; width: 100%; font-size: 15px; }
   .hamburger { display: flex; }
   .btn-nav { display: none; }
