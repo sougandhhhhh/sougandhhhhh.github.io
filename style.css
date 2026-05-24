@@ -263,13 +263,15 @@ a { color: inherit; text-decoration: none; }
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
+  z-index: 150;
   height: var(--nav-h);
   border-bottom: 1px solid transparent;
   transition: background var(--transition), border-color var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(10,10,18,0.92);
+  background: rgba(10,10,18,0.95);
+  /* Fallback for browsers without backdrop-filter support */
+  background: rgba(10,10,18,0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-color: rgba(0,245,228,0.1);
@@ -332,14 +334,18 @@ a { color: inherit; text-decoration: none; }
   .nav-links {
     position: fixed;
     top: var(--nav-h); left: 0; right: 0;
-    background: rgba(10,10,18,0.97);
+    background: rgba(10,10,18,0.98);
     border-bottom: 1px solid rgba(0,245,228,0.15);
     flex-direction: column;
     gap: 0;
-    padding: 16px 0;
+    padding: 8px 0 16px;
     transform: translateY(-110%);
-    transition: transform 0.3s ease;
-    z-index: 99;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 200;
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    will-change: transform;
   }
   .nav-links.open { transform: translateY(0); }
   .nav-links a { padding: 14px 24px; width: 100%; font-size: 15px; }

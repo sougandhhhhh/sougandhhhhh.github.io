@@ -4,36 +4,72 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
-/* ── HAMBURGER ── */
+/* ── HAMBURGER / MOBILE MENU ── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  // Animate hamburger to X
+function openMenu() {
+  navLinks.classList.add('open');
+  hamburger.classList.add('active');
+  hamburger.setAttribute('aria-expanded', 'true');
+  hamburger.setAttribute('aria-label', 'Close menu');
+  // Lock body scroll so the page doesn't scroll behind the open menu
+  document.body.style.overflow = 'hidden';
+  // Animate bars → X
   const spans = hamburger.querySelectorAll('span');
-  hamburger.classList.toggle('active');
-  if (hamburger.classList.contains('active')) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-  } else {
-    spans[0].style.transform = '';
-    spans[1].style.opacity = '';
-    spans[2].style.transform = '';
+  spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+  spans[1].style.opacity   = '0';
+  spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+}
+
+function closeMenu() {
+  navLinks.classList.remove('open');
+  hamburger.classList.remove('active');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-label', 'Open menu');
+  // Restore body scroll
+  document.body.style.overflow = '';
+  // Animate X → bars
+  const spans = hamburger.querySelectorAll('span');
+  spans[0].style.transform = '';
+  spans[1].style.opacity   = '';
+  spans[2].style.transform = '';
+}
+
+hamburger.setAttribute('aria-expanded', 'false');
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hamburger.classList.contains('active') ? closeMenu() : openMenu();
+});
+
+// Close when a nav link is tapped
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close when tapping outside the menu on mobile
+document.addEventListener('click', (e) => {
+  if (
+    navLinks.classList.contains('open') &&
+    !navLinks.contains(e.target) &&
+    !hamburger.contains(e.target)
+  ) {
+    closeMenu();
   }
 });
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('active');
-    hamburger.querySelectorAll('span').forEach(s => {
-      s.style.transform = '';
-      s.style.opacity = '';
-    });
-  });
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
 });
+
+// Re-enable scroll if window resizes past mobile breakpoint while menu is open
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+    closeMenu();
+  }
+}, { passive: true });
 
 /* ── REVEAL ON SCROLL ── */
 const revealEls = document.querySelectorAll('.reveal');
@@ -41,7 +77,6 @@ const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // Stagger siblings in same parent
       const parent = entry.target.parentElement;
       const siblings = Array.from(parent.querySelectorAll('.reveal:not(.visible)'));
       const idx = siblings.indexOf(entry.target);
@@ -96,13 +131,4 @@ terminalLines.forEach((line, i) => {
     line.style.transition = 'opacity 0.2s ease';
     line.style.opacity = '1';
   }, 800 + i * 120);
-});
-
-/* ── NEON CURSOR TRAIL (subtle) ── */
-let trail = [];
-const MAX_TRAIL = 8;
-
-document.addEventListener('mousemove', (e) => {
-  trail.push({ x: e.clientX, y: e.clientY, t: Date.now() });
-  if (trail.length > MAX_TRAIL) trail.shift();
 });
