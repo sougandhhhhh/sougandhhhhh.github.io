@@ -916,10 +916,12 @@ a { color: inherit; text-decoration: none; }
   gap: 10px;
 }
 .social-btn-grid .btn {
+  display: flex;
   justify-content: center;
   width: 100%;
   font-size: 11px;
-  padding: 8px 6px;
+  padding: 10px 6px;
+  box-sizing: border-box;
 }
 
 /* ── FOOTER ── */
