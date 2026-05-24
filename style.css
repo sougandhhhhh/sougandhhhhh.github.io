@@ -40,7 +40,10 @@
   --transition: 0.18s ease;
 }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+/* ── CSS VARIABLE: full navbar height including safe area ── */
+:root {
+  --nav-total: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
+}
 
 body {
   font-family: var(--font);
@@ -264,10 +267,11 @@ a { color: inherit; text-decoration: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 150;
-  height: var(--nav-h);
+  /* Grow navbar height to include iOS status bar safe area */
+  height: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
   border-bottom: 1px solid transparent;
   transition: background 0.25s ease, border-color 0.25s ease;
-  /* Always solid on mobile — overridden to blur on desktop when scrolled */
   background: var(--bg);
 }
 .navbar.scrolled {
@@ -349,7 +353,7 @@ a { color: inherit; text-decoration: none; }
   }
   .nav-links {
     position: fixed;
-    top: var(--nav-h); left: 0; right: 0;
+    top: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); left: 0; right: 0;
     background: rgba(10,10,18,0.98);
     border-bottom: 1px solid rgba(0,245,228,0.15);
     flex-direction: column;
@@ -358,7 +362,7 @@ a { color: inherit; text-decoration: none; }
     transform: translateY(-110%);
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 200;
-    max-height: calc(100vh - var(--nav-h));
+    max-height: calc(100vh - var(--nav-h) - env(safe-area-inset-top, 0px));
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     will-change: transform;
@@ -377,7 +381,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: calc(var(--nav-h) + 60px) 24px 80px;
+  padding: calc(var(--nav-total) + 60px) 24px 80px;
 }
 
 /* Grid background */
@@ -949,7 +953,7 @@ a { color: inherit; text-decoration: none; }
 /* ── HERO ── */
 @media (max-width: 768px) {
   .hero {
-    padding: calc(var(--nav-h) + 40px) 20px 60px;
+    padding: calc(var(--nav-total) + 40px) 20px 60px;
     align-items: flex-start;
   }
   .hero-inner { width: 100%; }
@@ -972,7 +976,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 480px) {
-  .hero { padding: calc(var(--nav-h) + 28px) 16px 48px; }
+  .hero { padding: calc(var(--nav-total) + 28px) 16px 48px; }
   .hero-title { font-size: clamp(2.4rem, 14vw, 3.5rem); letter-spacing: -0.03em; }
   .hero-eyebrow { display: none; } /* too cramped on 320px — hide, info is in About */
   .hero-cta { flex-direction: column; gap: 10px; }
@@ -1118,3 +1122,5 @@ a { color: inherit; text-decoration: none; }
   .t-cursor { animation: none; }
   @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 6px var(--cyan); } }
 }
+
+html { scroll-behavior: smooth; font-size: 16px; }
