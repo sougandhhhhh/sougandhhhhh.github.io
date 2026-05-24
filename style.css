@@ -505,12 +505,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   text-transform: uppercase;
 }
-
-@media (max-width: 600px) {
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
-  .stat-card:nth-child(2) { border-right: none; }
-  .stat-card:nth-child(3) { border-right: 1px solid rgba(0,245,228,0.08); }
-}
+/* Responsive overrides handled in the responsive section below */
 
 /* ── SECTIONS ── */
 .section { padding: 100px 0; }
@@ -564,9 +559,7 @@ a { color: inherit; text-decoration: none; }
   gap: 64px;
   align-items: start;
 }
-@media (max-width: 768px) {
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-}
+/* Responsive overrides handled in the responsive section below */
 
 .achievement-row {
   display: flex;
@@ -709,14 +702,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 48px;
 }
 .project-card.featured { grid-column: span 2; }
-@media (max-width: 900px) {
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-card.featured { grid-column: span 1; }
-}
-@media (min-width: 901px) and (max-width: 1100px) {
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .project-card.featured { grid-column: span 2; }
-}
+/* Responsive overrides handled in the responsive section below */
 
 .project-card {
   border: 1px solid var(--border-hi);
@@ -798,9 +784,7 @@ a { color: inherit; text-decoration: none; }
   gap: 24px;
   margin-top: 48px;
 }
-@media (max-width: 768px) {
-  .skills-grid { grid-template-columns: 1fr; }
-}
+/* Responsive overrides handled in the responsive section below */
 
 .skill-group {
   background: var(--surface);
@@ -849,9 +833,7 @@ a { color: inherit; text-decoration: none; }
   align-items: start;
   margin-top: 48px;
 }
-@media (max-width: 768px) {
-  .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
-}
+/* Responsive overrides handled in the responsive section below */
 
 .contact-cards { display: flex; flex-direction: column; gap: 14px; }
 .contact-card {
@@ -919,4 +901,198 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .footer-inner { flex-direction: column; text-align: center; }
   .hero-title { font-size: clamp(2.8rem, 14vw, 5rem); }
+}
+/* ════════════════════════════════════════════════
+   RESPONSIVE OVERRIDES — mobile-first, all screens
+   Breakpoints:
+     xs  < 400px   (small phones: iPhone SE, Galaxy A)
+     sm  < 480px   (phones)
+     md  < 640px   (large phones / small tablets)
+     lg  < 768px   (tablets portrait)
+     xl  < 1024px  (tablets landscape / small laptops)
+   ════════════════════════════════════════════════ */
+
+/* ── GLOBAL MOBILE FIXES ── */
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .body-text { max-width: 100%; }
+  .container { padding: 0 20px; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 56px 0; }
+  .container { padding: 0 16px; }
+}
+
+/* ── HERO ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: calc(var(--nav-h) + 40px) 20px 60px;
+    align-items: flex-start;
+  }
+  .hero-inner { width: 100%; }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+    margin-bottom: 16px;
+  }
+  .hero-roles { gap: 8px; margin-bottom: 18px; }
+  .hero-sub { font-size: 15px; margin-bottom: 28px; }
+  .hero-cta { margin-bottom: 40px; }
+  .hero-glow-cyan  { width: 300px; height: 300px; top: -50px; left: -80px; }
+  .hero-glow-magenta { width: 250px; height: 250px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: calc(var(--nav-h) + 28px) 16px 48px; }
+  .hero-title { font-size: clamp(2.4rem, 14vw, 3.5rem); letter-spacing: -0.03em; }
+  .hero-eyebrow { display: none; } /* too cramped on 320px — hide, info is in About */
+  .hero-cta { flex-direction: column; gap: 10px; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  /* Prevent button box-shadows from causing overflow */
+  .btn-primary, .btn-ghost { box-shadow: 3px 3px 0px var(--cyan-dim); }
+}
+
+/* Hero stats — 2-col on phones, 4-col on tablet+ */
+@media (max-width: 640px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  .stat-card:nth-child(2) { border-right: none; }
+  .stat-card:nth-child(3) { border-right: 1px solid rgba(0,245,228,0.08); }
+  .stat-val { font-size: 18px; }
+  .stat-lbl { font-size: 8px; }
+}
+
+@media (max-width: 400px) {
+  .stat-val { font-size: 16px; }
+  .stat-card { padding: 12px 8px; }
+}
+
+/* ── NAVBAR ── */
+@media (max-width: 400px) {
+  .nav-inner { padding: 0 16px; }
+  .nav-logo { font-size: 16px; }
+}
+
+/* ── ABOUT ── */
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-links { flex-direction: column; }
+  .about-links .btn { width: 100%; justify-content: center; }
+}
+
+/* Terminal — shrink font on small screens */
+@media (max-width: 480px) {
+  .terminal-body { padding: 14px; font-size: 11px; }
+  .t-out { padding-left: 12px; }
+  .terminal-bar { padding: 8px 12px; }
+}
+
+/* Achievement chips — wrap tightly */
+@media (max-width: 400px) {
+  .achievement-chip { font-size: 10px; padding: 4px 8px; }
+}
+
+/* ── WORK / TIMELINE ── */
+@media (max-width: 768px) {
+  .timeline { margin-top: 32px; }
+  .timeline-item { grid-template-columns: 24px 1fr; gap: 12px; }
+  .tl-card { padding: 18px 20px; }
+  .tl-header { flex-direction: column; gap: 8px; }
+  .tl-date { align-self: flex-start; }
+  .tl-role { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .timeline-item { grid-template-columns: 20px 1fr; gap: 10px; }
+  .tl-card { padding: 14px 16px; margin-bottom: 16px; }
+  .tl-desc { font-size: 13px; }
+}
+
+/* ── PROJECTS ── */
+/* 3-col desktop → 2-col tablet → 1-col mobile */
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card.featured { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+  .project-card.featured { grid-column: span 1; }
+  .project-card-inner { padding: 20px; gap: 12px; }
+  .project-title { font-size: 18px; }
+  .project-links { flex-wrap: wrap; }
+  .project-links .btn { flex: 1; justify-content: center; min-width: 100px; }
+}
+
+@media (max-width: 400px) {
+  .project-card-inner { padding: 16px; }
+  .project-links .btn { width: 100%; }
+}
+
+/* ── SKILLS ── */
+/* 3-col desktop → 2-col tablet → 1-col mobile */
+@media (max-width: 1024px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .skills-grid { grid-template-columns: 1fr; gap: 16px; }
+  .skill-group { padding: 20px; }
+}
+
+/* ── CONTACT ── */
+@media (max-width: 768px) {
+  .contact-wrap { grid-template-columns: 1fr; gap: 36px; }
+  .contact-text .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .contact-card { padding: 14px 16px; }
+  .cc-value { font-size: 13px; word-break: break-all; }
+}
+
+/* ── FOOTER ── */
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+  .footer-text { font-size: 11px; }
+}
+
+/* ── SECTION HEADERS ── */
+@media (max-width: 480px) {
+  .section-header { margin-bottom: 32px; }
+  .section-title { font-size: clamp(1.75rem, 8vw, 2.5rem); margin-bottom: 24px; }
+}
+
+/* ── PREVENT HORIZONTAL OVERFLOW GLOBALLY ── */
+/* Buttons with hard shadows can push layout on tiny screens */
+@media (max-width: 400px) {
+  .btn { box-shadow: 2px 2px 0px var(--cyan-dim) !important; }
+  .btn-outline-magenta { box-shadow: 2px 2px 0px var(--magenta-dim) !important; }
+  .btn-outline-yellow  { box-shadow: 2px 2px 0px var(--yellow-dim) !important; }
+  .btn:hover, .btn:active { transform: none !important; box-shadow: 2px 2px 0px var(--cyan-dim) !important; }
+}
+
+/* ── LARGE SCREENS (1400px+) ── */
+@media (min-width: 1400px) {
+  .container { max-width: 1240px; }
+  .hero-inner { max-width: 960px; }
+  .hero-title { font-size: 8rem; }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .skill-fill { transition: none; }
+  .eyebrow-dot { animation: none; }
+  .t-cursor { animation: none; }
+  @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 6px var(--cyan); } }
 }
