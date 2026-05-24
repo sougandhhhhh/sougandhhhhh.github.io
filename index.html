@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sougandh K P — Developer & Builder</title>
-  <meta name="description" content="Full-stack developer, builder, and student. I build fast, beautiful, and useful software." />
+  <title>Sougandh K P — Full Stack Developer</title>
+  <meta name="description" content="SRMIST '28 · B.Tech CSE Sophomore · Full Stack Developer · GSSoC Contributor 2026 · AI Explorer · Chennai, India" />
   <meta property="og:title" content="Sougandh K P" />
-  <meta property="og:description" content="Full-stack developer, builder, and student." />
+  <meta property="og:description" content="Full Stack Developer. SRMIST '28. Building Converto, ChoreWars & more." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+<!-- ── SCANLINE OVERLAY ── -->
+<div class="scanlines" aria-hidden="true"></div>
+
 <!-- ── NAVBAR ── -->
 <header class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">sp<span class="accent">.</span></a>
+    <a href="#" class="nav-logo">
+      <span class="logo-bracket">[</span>SKP<span class="logo-bracket">]</span>
+    </a>
     <nav class="nav-links" id="nav-links">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="#about"><span class="nav-num">01.</span>About</a>
+      <a href="#work"><span class="nav-num">02.</span>Work</a>
+      <a href="#projects"><span class="nav-num">03.</span>Projects</a>
+      <a href="#skills"><span class="nav-num">04.</span>Skills</a>
+      <a href="#contact"><span class="nav-num">05.</span>Contact</a>
     </nav>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-      </button>
+      <a href="mailto:kpsougand@gmail.com" class="btn-nav">Hire Me</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -40,179 +42,233 @@
 
 <!-- ── HERO ── -->
 <section class="hero" id="hero">
-  <div class="hero-glow hero-glow-1"></div>
-  <div class="hero-glow hero-glow-2"></div>
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow-cyan" aria-hidden="true"></div>
+  <div class="hero-glow-magenta" aria-hidden="true"></div>
+
   <div class="hero-inner">
-    <div class="hero-badge reveal">
-      <span class="badge-dot"></span>
-      Available for opportunities
+    <div class="hero-eyebrow reveal">
+      <span class="eyebrow-dot"></span>
+      <span class="mono">SRMIST '28 &nbsp;·&nbsp; CHENNAI, INDIA &nbsp;·&nbsp; OPEN TO WORK</span>
     </div>
+
     <h1 class="hero-title reveal">
-      Hi, I'm <span class="gradient-text">Sougandh K P</span><br/>
-      I build things for the web.
+      <span class="title-line">SOUGANDH</span>
+      <span class="title-line title-accent">K&nbsp;P</span>
     </h1>
+
+    <div class="hero-roles reveal">
+      <span class="role-chip">Full Stack Dev</span>
+      <span class="role-sep">/</span>
+      <span class="role-chip">AI Explorer</span>
+      <span class="role-sep">/</span>
+      <span class="role-chip">GSSoC '26</span>
+    </div>
+
     <p class="hero-sub reveal">
-      Full-stack developer &amp; student. I craft fast, beautiful, and purposeful software —
-      from file conversion engines to polished UIs. Currently building
-      <a href="https://github.com/sougandhhhhh/Converto" target="_blank" rel="noopener" class="inline-link">Converto</a>.
+      B.Tech CSE Sophomore building real software that ships.
+      From async file conversion engines to gamified chore apps —
+      I write code that actually does something.
     </p>
+
     <div class="hero-cta reveal">
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      <a href="#projects" class="btn btn-primary">
+        <span>View Projects</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
     </div>
+
     <div class="hero-stats reveal">
-      <div class="stat-item">
-        <span class="stat-value">10+</span>
-        <span class="stat-label">Projects Built</span>
+      <div class="stat-card">
+        <span class="stat-val cyan">132</span>
+        <span class="stat-lbl">Commits This Month</span>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-value">68+</span>
-        <span class="stat-label">Formats in Converto</span>
+      <div class="stat-card">
+        <span class="stat-val magenta">3</span>
+        <span class="stat-lbl">Public Repos</span>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-value">∞</span>
-        <span class="stat-label">Curiosity</span>
+      <div class="stat-card">
+        <span class="stat-val yellow">68+</span>
+        <span class="stat-lbl">Formats in Converto</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val cyan">GSSoC</span>
+        <span class="stat-lbl">Contributor 2026</span>
       </div>
     </div>
-  </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
   </div>
 </section>
 
 <!-- ── ABOUT ── -->
 <section class="section" id="about">
   <div class="container">
-    <div class="section-label reveal">About Me</div>
+    <div class="section-header reveal">
+      <span class="section-num mono">01</span>
+      <span class="section-line"></span>
+      <span class="section-tag">ABOUT_ME</span>
+    </div>
     <div class="about-grid">
       <div class="about-text">
-        <h2 class="section-title reveal">Turning ideas into<br/><span class="gradient-text">real software.</span></h2>
+        <h2 class="section-title reveal">
+          I turn caffeine<br/>into <span class="neon-cyan">working software.</span>
+        </h2>
         <p class="body-text reveal">
-          I'm Sougandh K P — a developer, builder, and student with a deep love for creating
-          software that actually solves problems. I specialize in full-stack web development, with a
-          particular focus on developer experience, performance, and clean UI.
+          Hey — I'm Sougandh K P, a B.Tech Computer Science sophomore at <span class="highlight">SRMIST, Chennai</span>.
+          I'm a full-stack developer who actually ships things. Not just side projects that live in a
+          private repo forever — real, deployed, working software.
         </p>
         <p class="body-text reveal">
-          When I'm not coding, I'm exploring new technologies, contributing to open source, or
-          thinking about how to make complex things feel simple. I believe great software is
-          invisible — it just works.
+          I'm a <span class="highlight">GSSoC 2026 contributor</span>, a tech enthusiast, and an AI explorer.
+          I've earned GitHub achievements including Pull Shark ×2, YOLO, Quickdraw, and Pair Extraordinaire.
+          When I'm not coding, I'm probably thinking about the next thing to build.
         </p>
+        <div class="achievement-row reveal">
+          <div class="achievement-chip">
+            <span class="ach-icon">🎯</span> Pull Shark ×2
+          </div>
+          <div class="achievement-chip">
+            <span class="ach-icon">⚡</span> YOLO
+          </div>
+          <div class="achievement-chip">
+            <span class="ach-icon">🚀</span> Quickdraw
+          </div>
+          <div class="achievement-chip">
+            <span class="ach-icon">🤝</span> Pair Extraordinaire
+          </div>
+        </div>
         <div class="about-links reveal">
-          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="social-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
+          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-cyan">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            @sougandhhhhh
           </a>
-          <a href="mailto:kpsougand@gmail.com" class="social-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            Email
+          <a href="mailto:kpsougand@gmail.com" class="btn btn-outline-magenta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            kpsougand@gmail.com
           </a>
         </div>
       </div>
-      <div class="about-card-wrap reveal">
-        <div class="about-card glass-card">
-          <div class="about-avatar">
-            <div class="avatar-ring"></div>
-            <div class="avatar-inner">SP</div>
-          </div>
-          <div class="about-card-info">
-            <div class="about-card-name">Sougandh K P</div>
-            <div class="about-card-role">Full-Stack Developer</div>
-          </div>
-          <div class="about-card-tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">Python</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Docker</span>
-            <span class="tag">React</span>
-          </div>
+      <div class="about-terminal reveal">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title mono">sougandh@srmist:~</span>
+        </div>
+        <div class="terminal-body mono">
+          <div class="t-line"><span class="t-prompt">$</span> whoami</div>
+          <div class="t-line t-out">Sougandh K P</div>
+          <div class="t-line"><span class="t-prompt">$</span> cat info.json</div>
+          <div class="t-line t-out">{</div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"college"</span>: <span class="t-str">"SRMIST"</span>,</div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"year"</span>: <span class="t-str">"'28 Sophomore"</span>,</div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"branch"</span>: <span class="t-str">"B.Tech CSE"</span>,</div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-str">"Chennai, India"</span>,</div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-str">"Full Stack Dev"</span>,</div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"gssoc"</span>: <span class="t-bool">true</span>,</div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-str">"🎯 Focusing"</span></div>
+          <div class="t-line t-out">}</div>
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor">█</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── WORK / EXPERIENCE ── -->
+<!-- ── WORK ── -->
 <section class="section section-alt" id="work">
   <div class="container">
-    <div class="section-label reveal">Experience</div>
-    <h2 class="section-title reveal">What I've been<br/><span class="gradient-text">working on.</span></h2>
-    <div class="timeline">
+    <div class="section-header reveal">
+      <span class="section-num mono">02</span>
+      <span class="section-line"></span>
+      <span class="section-tag">EXPERIENCE</span>
+    </div>
+    <h2 class="section-title reveal">What I've been<br/><span class="neon-magenta">shipping.</span></h2>
 
+    <div class="timeline">
       <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass-card">
-          <div class="timeline-header">
+        <div class="tl-marker">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-card neon-card-cyan">
+          <div class="tl-header">
             <div>
-              <div class="timeline-role">Founder &amp; Lead Developer</div>
-              <div class="timeline-company">Converto — Universal File Converter</div>
+              <div class="tl-role">Founder &amp; Lead Developer</div>
+              <div class="tl-company cyan">Converto — Universal File Converter</div>
             </div>
-            <span class="timeline-date">2025 – Present</span>
+            <span class="tl-date mono">2025 – Present</span>
           </div>
-          <p class="timeline-desc">
+          <p class="tl-desc">
             Designed and built a full-stack file conversion platform supporting 68+ format conversions.
             Architected a FastAPI + Celery + Redis async pipeline, integrated LibreOffice headless,
-            Gotenberg, Pandoc, Tesseract OCR, and deployed on Render + Vercel with Docker orchestration.
+            Gotenberg, Pandoc, Tesseract OCR. Deployed on Render + Vercel with full Docker orchestration.
+            132 commits in May 2026 alone.
           </p>
-          <div class="timeline-tags">
-            <span class="tag tag-indigo">Next.js 16</span>
-            <span class="tag tag-purple">FastAPI</span>
-            <span class="tag tag-pink">Celery</span>
-            <span class="tag tag-blue">Docker</span>
-            <span class="tag tag-green">Redis</span>
+          <div class="tl-tags">
+            <span class="tag-cyber cyan">Next.js 16</span>
+            <span class="tag-cyber magenta">FastAPI</span>
+            <span class="tag-cyber yellow">Celery</span>
+            <span class="tag-cyber cyan">Docker</span>
+            <span class="tag-cyber magenta">Redis</span>
           </div>
         </div>
       </div>
 
       <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass-card">
-          <div class="timeline-header">
+        <div class="tl-marker">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-card neon-card-magenta">
+          <div class="tl-header">
             <div>
-              <div class="timeline-role">Open Source Contributor</div>
-              <div class="timeline-company">GitHub — Various Projects</div>
+              <div class="tl-role">Builder</div>
+              <div class="tl-company magenta">ChoreWars — Gamified Chore Management</div>
             </div>
-            <span class="timeline-date">2024 – Present</span>
+            <span class="tl-date mono">May 2026</span>
           </div>
-          <p class="timeline-desc">
-            Actively contributing to open source projects, building developer tooling, and
-            exploring new frameworks. Focused on developer experience improvements and
-            performance optimizations across the JavaScript and Python ecosystems.
+          <p class="tl-desc">
+            Built a high-stakes competitive chore management system that gamifies household responsibilities.
+            Features real-time analytics, skill distribution radar charts across 6 categories, roommate
+            leaderboards, interactive calendar, and a reward polling system. Deployed on Vercel with Supabase.
           </p>
-          <div class="timeline-tags">
-            <span class="tag tag-indigo">TypeScript</span>
-            <span class="tag tag-purple">Python</span>
-            <span class="tag tag-blue">React</span>
+          <div class="tl-tags">
+            <span class="tag-cyber magenta">Next.js</span>
+            <span class="tag-cyber cyan">Supabase</span>
+            <span class="tag-cyber yellow">Zustand</span>
+            <span class="tag-cyber magenta">TypeScript</span>
           </div>
         </div>
       </div>
 
       <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass-card">
-          <div class="timeline-header">
+        <div class="tl-marker">
+          <div class="tl-dot"></div>
+        </div>
+        <div class="tl-card neon-card-yellow">
+          <div class="tl-header">
             <div>
-              <div class="timeline-role">Student Developer</div>
-              <div class="timeline-company">Self-Directed Learning &amp; Projects</div>
+              <div class="tl-role">Open Source Contributor</div>
+              <div class="tl-company yellow">GSSoC 2026 — GirlScript Summer of Code</div>
             </div>
-            <span class="timeline-date">2023 – Present</span>
+            <span class="tl-date mono">2026</span>
           </div>
-          <p class="timeline-desc">
-            Continuously building, shipping, and learning. From small CLI tools to full-stack
-            web applications — every project is an opportunity to go deeper into the craft of
-            software engineering.
+          <p class="tl-desc">
+            Contributing to open source projects as part of GSSoC 2026. Earned GitHub achievements
+            including Pull Shark ×2 for merged pull requests. First PR on GitHub was a Converto
+            Conversion Engine Audit Report.
           </p>
-          <div class="timeline-tags">
-            <span class="tag tag-green">Full-Stack</span>
-            <span class="tag tag-amber">UI/UX</span>
-            <span class="tag tag-pink">Systems Design</span>
+          <div class="tl-tags">
+            <span class="tag-cyber yellow">Open Source</span>
+            <span class="tag-cyber cyan">GitHub</span>
+            <span class="tag-cyber magenta">Pull Shark ×2</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -220,88 +276,104 @@
 <!-- ── PROJECTS ── -->
 <section class="section" id="projects">
   <div class="container">
-    <div class="section-label reveal">Projects</div>
-    <h2 class="section-title reveal">Things I've<br/><span class="gradient-text">built.</span></h2>
+    <div class="section-header reveal">
+      <span class="section-num mono">03</span>
+      <span class="section-line"></span>
+      <span class="section-tag">PROJECTS</span>
+    </div>
+    <h2 class="section-title reveal">Things I've<br/><span class="neon-cyan">built.</span></h2>
+
     <div class="projects-grid">
 
-      <div class="project-card glass-card reveal featured">
-        <div class="project-card-header">
-          <div class="project-icon" style="--accent:#6366f1;--glow:rgba(99,102,241,0.15)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+      <!-- CONVERTO -->
+      <div class="project-card featured reveal">
+        <div class="project-card-inner">
+          <div class="project-top">
+            <div class="project-icon-wrap cyan">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+            </div>
+            <span class="project-badge-featured mono">// FEATURED</span>
           </div>
-          <span class="project-badge">Featured</span>
-        </div>
-        <h3 class="project-title">Converto</h3>
-        <p class="project-desc">
-          Universal file conversion platform supporting 68+ format conversions. Built with Next.js 16,
-          FastAPI, Celery, Redis, LibreOffice, Gotenberg, and Pandoc. Zero file retention, async processing,
-          and a polished dark UI.
-        </p>
-        <div class="project-tags">
-          <span class="tag tag-indigo">Next.js</span>
-          <span class="tag tag-purple">FastAPI</span>
-          <span class="tag tag-pink">Celery</span>
-          <span class="tag tag-blue">Docker</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/sougandhhhhh/Converto" target="_blank" rel="noopener" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
-          <a href="https://converto-app.vercel.app" target="_blank" rel="noopener" class="project-link project-link-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-            Live Demo
-          </a>
+          <h3 class="project-title">Converto</h3>
+          <p class="project-desc">
+            Universal file conversion platform — 68+ formats, zero file retention.
+            FastAPI + Celery + Redis async pipeline. LibreOffice, Gotenberg, Pandoc, Tesseract OCR.
+            Full Docker orchestration. Built and shipped solo.
+          </p>
+          <div class="project-meta mono">
+            <span class="meta-item"><span class="cyan">★</span> 1 star</span>
+            <span class="meta-item"><span class="cyan">⌥</span> TypeScript</span>
+            <span class="meta-item"><span class="cyan">⚡</span> 69 commits/month</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag-cyber cyan">Next.js 16</span>
+            <span class="tag-cyber magenta">FastAPI</span>
+            <span class="tag-cyber yellow">Docker</span>
+            <span class="tag-cyber cyan">Redis</span>
+            <span class="tag-cyber magenta">Celery</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sougandhhhhh/Converto" target="_blank" rel="noopener" class="btn btn-outline-cyan btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Source
+            </a>
+            <a href="https://converto-app.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              Live Demo →
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card glass-card reveal">
-        <div class="project-card-header">
-          <div class="project-icon" style="--accent:#a855f7;--glow:rgba(168,85,247,0.15)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <!-- CHOREWARS -->
+      <div class="project-card reveal">
+        <div class="project-card-inner">
+          <div class="project-top">
+            <div class="project-icon-wrap magenta">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
           </div>
-        </div>
-        <h3 class="project-title">Personal Portfolio</h3>
-        <p class="project-desc">
-          This site — a fully static personal profile built with vanilla HTML, CSS, and JS.
-          Premium dark design with glassmorphism, scroll animations, and responsive layout.
-          Deployed to GitHub Pages.
-        </p>
-        <div class="project-tags">
-          <span class="tag tag-indigo">HTML</span>
-          <span class="tag tag-purple">CSS</span>
-          <span class="tag tag-blue">JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/sougandhhhhh/sougandhhhhh.github.io" target="_blank" rel="noopener" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
+          <h3 class="project-title">ChoreWars</h3>
+          <p class="project-desc">
+            Gamified chore management system. Earn points, level up, compete with roommates.
+            Radar charts, leaderboards, reward polling, interactive calendar. Supabase backend.
+          </p>
+          <div class="project-meta mono">
+            <span class="meta-item"><span class="magenta">★</span> 1 star</span>
+            <span class="meta-item"><span class="magenta">⌥</span> TypeScript 78.7%</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag-cyber magenta">Next.js</span>
+            <span class="tag-cyber cyan">Supabase</span>
+            <span class="tag-cyber yellow">Zustand</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sougandhhhhh/ChoreWars" target="_blank" rel="noopener" class="btn btn-outline-magenta btn-sm">Source</a>
+            <a href="https://chorewars2026.vercel.app" target="_blank" rel="noopener" class="btn btn-outline-magenta btn-sm">Live →</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card glass-card reveal">
-        <div class="project-card-header">
-          <div class="project-icon" style="--accent:#ec4899;--glow:rgba(236,72,153,0.15)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <!-- PORTFOLIO -->
+      <div class="project-card reveal">
+        <div class="project-card-inner">
+          <div class="project-top">
+            <div class="project-icon-wrap yellow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
           </div>
-        </div>
-        <h3 class="project-title">Developer Tooling</h3>
-        <p class="project-desc">
-          A collection of CLI tools, scripts, and utilities built to automate repetitive
-          developer workflows. Includes batch processing scripts, file management tools,
-          and automation helpers.
-        </p>
-        <div class="project-tags">
-          <span class="tag tag-green">Python</span>
-          <span class="tag tag-amber">Bash</span>
-          <span class="tag tag-blue">CLI</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
+          <h3 class="project-title">This Portfolio</h3>
+          <p class="project-desc">
+            Vanilla HTML/CSS/JS. Cyberpunk × Bold Tech aesthetic. Scanlines, neon glows,
+            terminal UI, neo-brutalist buttons. No framework, no build step. Pure craft.
+          </p>
+          <div class="project-tags">
+            <span class="tag-cyber yellow">HTML</span>
+            <span class="tag-cyber cyan">CSS</span>
+            <span class="tag-cyber magenta">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sougandhhhhh/sougandhhhhh.github.io" target="_blank" rel="noopener" class="btn btn-outline-yellow btn-sm">Source</a>
+          </div>
         </div>
       </div>
 
@@ -312,55 +384,115 @@
 <!-- ── SKILLS ── -->
 <section class="section section-alt" id="skills">
   <div class="container">
-    <div class="section-label reveal">Skills</div>
-    <h2 class="section-title reveal">My tech<br/><span class="gradient-text">stack.</span></h2>
+    <div class="section-header reveal">
+      <span class="section-num mono">04</span>
+      <span class="section-line"></span>
+      <span class="section-tag">TECH_STACK</span>
+    </div>
+    <h2 class="section-title reveal">My<br/><span class="neon-yellow">arsenal.</span></h2>
+
     <div class="skills-grid">
-
-      <div class="skill-group glass-card reveal">
-        <div class="skill-group-header">
-          <div class="skill-group-icon" style="--accent:#6366f1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-          </div>
-          <span class="skill-group-title">Frontend</span>
-        </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-label mono cyan">// FRONTEND</div>
         <div class="skill-list">
-          <div class="skill-item"><span class="skill-name">Next.js / React</span><div class="skill-bar"><div class="skill-fill" style="--pct:92%;--color:#6366f1"></div></div></div>
-          <div class="skill-item"><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-fill" style="--pct:88%;--color:#6366f1"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Tailwind CSS</span><div class="skill-bar"><div class="skill-fill" style="--pct:90%;--color:#6366f1"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Framer Motion</span><div class="skill-bar"><div class="skill-fill" style="--pct:80%;--color:#6366f1"></div></div></div>
+          <div class="skill-item">
+            <span class="skill-name">Next.js / React</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:92%"></div></div>
+              <span class="skill-pct mono cyan">92%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">TypeScript</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:88%"></div></div>
+              <span class="skill-pct mono cyan">88%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Tailwind CSS</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:90%"></div></div>
+              <span class="skill-pct mono cyan">90%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Framer Motion</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:78%"></div></div>
+              <span class="skill-pct mono cyan">78%</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="skill-group glass-card reveal">
-        <div class="skill-group-header">
-          <div class="skill-group-icon" style="--accent:#a855f7">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-          </div>
-          <span class="skill-group-title">Backend</span>
-        </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-label mono magenta">// BACKEND</div>
         <div class="skill-list">
-          <div class="skill-item"><span class="skill-name">Python / FastAPI</span><div class="skill-bar"><div class="skill-fill" style="--pct:90%;--color:#a855f7"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Node.js</span><div class="skill-bar"><div class="skill-fill" style="--pct:82%;--color:#a855f7"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Celery / Redis</span><div class="skill-bar"><div class="skill-fill" style="--pct:78%;--color:#a855f7"></div></div></div>
-          <div class="skill-item"><span class="skill-name">tRPC / REST APIs</span><div class="skill-bar"><div class="skill-fill" style="--pct:85%;--color:#a855f7"></div></div></div>
+          <div class="skill-item">
+            <span class="skill-name">Python / FastAPI</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:90%"></div></div>
+              <span class="skill-pct mono magenta">90%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Node.js</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:82%"></div></div>
+              <span class="skill-pct mono magenta">82%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Celery / Redis</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:78%"></div></div>
+              <span class="skill-pct mono magenta">78%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Supabase / tRPC</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:84%"></div></div>
+              <span class="skill-pct mono magenta">84%</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="skill-group glass-card reveal">
-        <div class="skill-group-header">
-          <div class="skill-group-icon" style="--accent:#ec4899">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          </div>
-          <span class="skill-group-title">Infrastructure</span>
-        </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-label mono yellow">// INFRA &amp; TOOLS</div>
         <div class="skill-list">
-          <div class="skill-item"><span class="skill-name">Docker / Compose</span><div class="skill-bar"><div class="skill-fill" style="--pct:85%;--color:#ec4899"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Vercel / Render</span><div class="skill-bar"><div class="skill-fill" style="--pct:88%;--color:#ec4899"></div></div></div>
-          <div class="skill-item"><span class="skill-name">AWS S3 / R2</span><div class="skill-bar"><div class="skill-fill" style="--pct:72%;--color:#ec4899"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-bar"><div class="skill-fill" style="--pct:95%;--color:#ec4899"></div></div></div>
+          <div class="skill-item">
+            <span class="skill-name">Docker / Compose</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:85%"></div></div>
+              <span class="skill-pct mono yellow">85%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Vercel / Render</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:90%"></div></div>
+              <span class="skill-pct mono yellow">90%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Git / GitHub</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:95%"></div></div>
+              <span class="skill-pct mono yellow">95%</span>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">AWS S3 / R2</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:72%"></div></div>
+              <span class="skill-pct mono yellow">72%</span>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -368,39 +500,54 @@
 <!-- ── CONTACT ── -->
 <section class="section" id="contact">
   <div class="container">
-    <div class="section-label reveal">Contact</div>
-    <h2 class="section-title reveal">Let's work<br/><span class="gradient-text">together.</span></h2>
-    <div class="contact-grid">
-      <div class="contact-text reveal">
-        <p class="body-text">
-          I'm always open to interesting conversations, collaboration opportunities,
-          or just a good chat about tech. Whether you have a project in mind or just
-          want to connect — my inbox is open.
+    <div class="section-header reveal">
+      <span class="section-num mono">05</span>
+      <span class="section-line"></span>
+      <span class="section-tag">CONTACT</span>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-text">
+        <h2 class="section-title reveal">
+          Let's build<br/><span class="neon-cyan">something.</span>
+        </h2>
+        <p class="body-text reveal">
+          I'm always open to interesting projects, collaborations, or just a good
+          conversation about tech. Whether you want to work together or just say hi —
+          reach out.
         </p>
-        <a href="mailto:kpsougand@gmail.com" class="btn btn-primary contact-btn">
+        <a href="mailto:kpsougand@gmail.com" class="btn btn-primary btn-lg reveal">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Say Hello
+          Send a Message
         </a>
       </div>
       <div class="contact-cards reveal">
-        <a href="mailto:kpsougand@gmail.com" class="contact-card glass-card">
-          <div class="contact-card-icon" style="--accent:#6366f1">
+        <a href="mailto:kpsougand@gmail.com" class="contact-card neon-card-cyan">
+          <div class="cc-icon cyan">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </div>
           <div>
-            <div class="contact-card-label">Email</div>
-            <div class="contact-card-value">kpsougand@gmail.com</div>
+            <div class="cc-label mono">EMAIL</div>
+            <div class="cc-value">kpsougand@gmail.com</div>
           </div>
         </a>
-        <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="contact-card glass-card">
-          <div class="contact-card-icon" style="--accent:#a855f7">
+        <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="contact-card neon-card-magenta">
+          <div class="cc-icon magenta">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </div>
           <div>
-            <div class="contact-card-label">GitHub</div>
-            <div class="contact-card-value">@sougandhhhhh</div>
+            <div class="cc-label mono">GITHUB</div>
+            <div class="cc-value">@sougandhhhhh</div>
           </div>
         </a>
+        <div class="contact-card neon-card-yellow">
+          <div class="cc-icon yellow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="cc-label mono">LOCATION</div>
+            <div class="cc-value">Chennai, India</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -409,10 +556,8 @@
 <!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-logo">sp<span class="accent">.</span></div>
-    <div class="footer-text">
-    Built with care by Sougandh K P &mdash; 2025
-    </div>
+    <div class="footer-logo mono"><span class="logo-bracket">[</span>SKP<span class="logo-bracket">]</span></div>
+    <div class="footer-text mono">// Built by Sougandh K P &mdash; SRMIST '28</div>
     <div class="footer-links">
       <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener">GitHub</a>
       <a href="mailto:kpsougand@gmail.com">Email</a>
