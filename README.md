@@ -1,4 +1,4 @@
-# Sougandhika Paruchuri — Personal Portfolio
+# Sougandh K P — Personal Portfolio
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-sougandhkp.me-6366f1?style=flat-square&logo=github)](https://sougandhhhhh.github.io)
 
