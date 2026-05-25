@@ -13,9 +13,7 @@ function openMenu() {
   hamburger.classList.add('active');
   hamburger.setAttribute('aria-expanded', 'true');
   hamburger.setAttribute('aria-label', 'Close menu');
-  // Lock body scroll so the page doesn't scroll behind the open menu
   document.body.style.overflow = 'hidden';
-  // Animate bars → X
   const spans = hamburger.querySelectorAll('span');
   spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
   spans[1].style.opacity   = '0';
@@ -27,9 +25,7 @@ function closeMenu() {
   hamburger.classList.remove('active');
   hamburger.setAttribute('aria-expanded', 'false');
   hamburger.setAttribute('aria-label', 'Open menu');
-  // Restore body scroll
   document.body.style.overflow = '';
-  // Animate X → bars
   const spans = hamburger.querySelectorAll('span');
   spans[0].style.transform = '';
   spans[1].style.opacity   = '';
@@ -43,12 +39,10 @@ hamburger.addEventListener('click', (e) => {
   hamburger.classList.contains('active') ? closeMenu() : openMenu();
 });
 
-// Close when a nav link is tapped
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
 
-// Close when tapping outside the menu on mobile
 document.addEventListener('click', (e) => {
   if (
     navLinks.classList.contains('open') &&
@@ -59,17 +53,49 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Close on Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
 });
 
-// Re-enable scroll if window resizes past mobile breakpoint while menu is open
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
     closeMenu();
   }
 }, { passive: true });
+
+/* ── THEME TOGGLE ── */
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  document.querySelector('meta[name="theme-color"]')
+    .setAttribute('content', isLight ? '#f0f0f8' : '#0B0D2E');
+});
+
+/* ── HIRE ME DROPDOWN ── */
+const hireDropdown = document.getElementById('hire-dropdown');
+const hireBtn = document.getElementById('hire-btn');
+
+hireBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hireDropdown.classList.toggle('open');
+});
+
+document.addEventListener('click', (e) => {
+  if (!hireDropdown.contains(e.target)) {
+    hireDropdown.classList.remove('open');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') hireDropdown.classList.remove('open');
+});
 
 /* ── REVEAL ON SCROLL ── */
 const revealEls = document.querySelectorAll('.reveal');
