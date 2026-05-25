@@ -508,10 +508,10 @@ a{color:inherit;text-decoration:none}
 }
 .name-label{
   display:block;
-  font-size:.9rem;
-  letter-spacing:6px;
+  font-size:1.4rem;
+  letter-spacing:8px;
   color:var(--text-dim);
-  margin-bottom:4px;
+  margin-bottom:8px;
 }
 .name-text{
   font-family:var(--font-heading);
@@ -534,6 +534,7 @@ a{color:inherit;text-decoration:none}
   transform-origin:50% 45%;
 }
 
+#scramble-target{cursor:default}
 .hero-glitch{
   animation:glitch-pulse 4s ease-in-out infinite;
 }
@@ -642,7 +643,7 @@ a{color:inherit;text-decoration:none}
   text-shadow:0 0 10px rgba(168,85,247,.5),0 0 20px rgba(236,72,153,.3);
 }
 .marquee-dot{
-  color:var(--neon-pink);
+  color:var(--neon-purple);
   font-size:.7rem;
   display:inline-flex;
   align-items:center;
@@ -1350,64 +1351,44 @@ a{color:inherit;text-decoration:none}
   margin-bottom:12px;
 }
 
-/* Click effect */
+/* Sniper click effect */
 .click-effect{
   position:fixed;
   pointer-events:none;
   z-index:99999;
-  width:20px;
-  height:20px;
-  transform:translate(-50%,-50%);
+  width:0;
+  height:0;
 }
-.click-ring{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:6px;
-  height:6px;
-  border:2px solid var(--neon-purple);
-  border-radius:50%;
-  transform:translate(-50%,-50%);
-  animation:click-ring-expand .5s ease-out forwards;
-}
-.click-ring:nth-child(2){
-  border-color:var(--neon-pink);
-  animation-delay:.05s;
-}
-.click-cross{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%) rotate(45deg);
-  animation:click-cross-fade .4s ease-out forwards;
-}
-.click-cross::before,.click-cross::after{
-  content:'';
+.sniper-line{
   position:absolute;
   background:var(--neon-purple);
-  border-radius:1px;
+  transform-origin:center;
+  animation:sniper-line-out .5s ease-out forwards;
 }
-.click-cross::before{
-  width:12px;
-  height:1.5px;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+.sniper-line.h{width:12px;height:2px;top:-1px}
+.sniper-line.v{width:2px;height:12px;left:-1px}
+.sniper-line.r{left:5px}
+.sniper-line.l{right:5px}
+.sniper-line.d{top:5px}
+.sniper-line.u{bottom:5px}
+.sniper-dot{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:var(--neon-purple);
+  border-radius:50%;
+  top:-1.5px;
+  left:-1.5px;
+  animation:sniper-dot-out .5s ease-out forwards;
 }
-.click-cross::after{
-  width:1.5px;
-  height:12px;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+@keyframes sniper-line-out{
+  0%{opacity:1;transform:scale(1)}
+  60%{opacity:1;transform:scale(1) translate(var(--tx),var(--ty))}
+  100%{opacity:0;transform:scale(0.3) translate(var(--tx2),var(--ty2))}
 }
-@keyframes click-ring-expand{
-  0%{width:6px;height:6px;opacity:1}
-  100%{width:30px;height:30px;opacity:0}
-}
-@keyframes click-cross-fade{
-  0%{opacity:1;transform:translate(-50%,-50%) rotate(45deg) scale(1)}
-  100%{opacity:0;transform:translate(-50%,-50%) rotate(45deg) scale(.5)}
+@keyframes sniper-dot-out{
+  0%{opacity:1;transform:translate(0,0) scale(1)}
+  100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}
 }
 
 /* ══════════════════════════════════════════════
