@@ -202,44 +202,43 @@ sections.forEach(s => sectionObserver.observe(s));
   });
 })();
 
-/* ── SNIPER CLICK EFFECT ── */
+/* ── SNIPER CLICK EFFECT (Framer-inspired) ── */
 document.addEventListener('click', (e) => {
-  const container = document.createElement('div');
-  container.className = 'click-effect';
-  container.style.left = e.clientX + 'px';
-  container.style.top = e.clientY + 'px';
+  const c = document.createElement('div');
+  c.className = 'click-effect';
+  c.style.left = e.clientX + 'px';
+  c.style.top = e.clientY + 'px';
 
-  // 4 crosshair lines (right, left, down, up)
-  const dirs = [
-    { cls: 'h r', tx: '20px', ty: '0', tx2: '30px', ty2: '0' },
-    { cls: 'h l', tx: '-20px', ty: '0', tx2: '-30px', ty2: '0' },
-    { cls: 'v d', tx: '0', ty: '20px', tx2: '0', ty2: '30px' },
-    { cls: 'v u', tx: '0', ty: '-20px', tx2: '0', ty2: '-30px' }
-  ];
-  dirs.forEach(d => {
-    const line = document.createElement('div');
-    line.className = 'sniper-line ' + d.cls;
-    line.style.setProperty('--tx', d.tx);
-    line.style.setProperty('--ty', d.ty);
-    line.style.setProperty('--tx2', d.tx2);
-    line.style.setProperty('--ty2', d.ty2);
-    container.appendChild(line);
+  const gap = 5, len = 14;
+  [
+    { x: 1, y: 0 }, { x: -1, y: 0 },
+    { x: 0, y: 1 }, { x: 0, y: -1 },
+  ].forEach(d => {
+    const l = document.createElement('div');
+    l.className = 'click-line';
+    const s = d.x * gap, t = d.y * gap;
+    l.style.cssText = d.y === 0
+      ? `width:${len}px;height:2px;left:${s}px;top:-1px`
+      : `width:2px;height:${len}px;left:-1px;top:${t}px`;
+    c.appendChild(l);
+    requestAnimationFrame(() => {
+      l.style.transition = 'opacity .08s ease,transform .35s cubic-bezier(.22,1,.36,1)';
+      l.style.opacity = '1';
+      setTimeout(() => { l.style.transition = 'opacity .3s ease'; l.style.opacity = '0'; }, 250);
+    });
   });
 
-  // 8 diagonal dots
-  const angles = [Math.PI/6, Math.PI/3, 2*Math.PI/3, 5*Math.PI/6,
-                  7*Math.PI/6, 4*Math.PI/3, 5*Math.PI/3, 11*Math.PI/6];
-  angles.forEach(a => {
+  for (let i = 0; i < 8; i++) {
     const dot = document.createElement('div');
-    dot.className = 'sniper-dot';
-    const dist = 25;
+    dot.className = 'click-dot';
+    const a = Math.PI / 6 + i * Math.PI / 4, dist = 28;
     dot.style.setProperty('--dx', Math.cos(a) * dist + 'px');
     dot.style.setProperty('--dy', Math.sin(a) * dist + 'px');
-    container.appendChild(dot);
-  });
+    c.appendChild(dot);
+  }
 
-  document.body.appendChild(container);
-  setTimeout(() => container.remove(), 600);
+  document.body.appendChild(c);
+  setTimeout(() => c.remove(), 600);
 });
 
 /* ── DIRECTIONAL CURSOR ── */

@@ -815,11 +815,8 @@ a{color:inherit;text-decoration:none}
   flex-direction:column;
 }
 #contact-block{
-  justify-content:space-between;
-}
-#contact-block .page-block-inner{
-  justify-content:center;
-  flex:1;
+  min-height:0;
+  padding-bottom:80px;
 }
 .page-block-inner{
   flex:1;
@@ -1294,7 +1291,7 @@ a{color:inherit;text-decoration:none}
   position:relative;
   z-index:1;
   border-top:1px solid var(--glass-border);
-  padding:20px 0;
+  padding:28px 0;
 }
 .footer-inner{
   display:flex;
@@ -1351,44 +1348,33 @@ a{color:inherit;text-decoration:none}
   margin-bottom:12px;
 }
 
-/* Sniper click effect */
+/* Click effect (Framer-inspired sniper) */
 .click-effect{
   position:fixed;
   pointer-events:none;
   z-index:99999;
-  width:0;
-  height:0;
+  width:0;height:0;
 }
-.sniper-line{
+.click-line{
   position:absolute;
   background:var(--neon-purple);
-  transform-origin:center;
-  animation:sniper-line-out .5s ease-out forwards;
+  border-radius:1px;
+  box-shadow:0 0 6px rgba(168,85,247,.5);
+  opacity:0;
 }
-.sniper-line.h{width:12px;height:2px;top:-1px}
-.sniper-line.v{width:2px;height:12px;left:-1px}
-.sniper-line.r{left:5px}
-.sniper-line.l{right:5px}
-.sniper-line.d{top:5px}
-.sniper-line.u{bottom:5px}
-.sniper-dot{
+.click-dot{
   position:absolute;
-  width:3px;
-  height:3px;
+  width:3px;height:3px;
   background:var(--neon-purple);
   border-radius:50%;
-  top:-1.5px;
-  left:-1.5px;
-  animation:sniper-dot-out .5s ease-out forwards;
+  box-shadow:0 0 6px rgba(168,85,247,.8);
+  left:-1.5px;top:-1.5px;
+  animation:click-dot-fly .45s cubic-bezier(.22,1,.36,1) forwards;
 }
-@keyframes sniper-line-out{
-  0%{opacity:1;transform:scale(1)}
-  60%{opacity:1;transform:scale(1) translate(var(--tx),var(--ty))}
-  100%{opacity:0;transform:scale(0.3) translate(var(--tx2),var(--ty2))}
-}
-@keyframes sniper-dot-out{
+@keyframes click-dot-fly{
   0%{opacity:1;transform:translate(0,0) scale(1)}
-  100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}
+  65%{opacity:1;transform:translate(var(--dx),var(--dy)) scale(1)}
+  100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.3)}
 }
 
 /* Directional cursor */
