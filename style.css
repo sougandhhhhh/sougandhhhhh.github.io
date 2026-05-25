@@ -538,19 +538,14 @@ body.light .theme-icon-moon{display:block}
   position:relative;
 }
 
-/* Flipped A */
+/* Flipped A (logo only) */
 .flipped-a{
   display:inline-block;
   transform:rotate(180deg) scaleX(-1);
-}
-.name-text .flipped-a{
-  background:inherit;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
+  transform-origin:50% 45%;
 }
 
-/* Eye inside O */
+/* Eye inside O — airborne.studio style */
 .eye-letter{
   position:relative;
   display:inline-block;
@@ -559,28 +554,28 @@ body.light .theme-icon-moon{display:block}
   -webkit-text-fill-color:transparent;
   background-clip:text;
 }
-.eye-wrap{
+.eye-iris{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  width:0.5em;
-  height:0.5em;
-  background:radial-gradient(circle,#fff 28%,rgba(168,85,247,.85) 55%,rgba(168,85,247,.2) 100%);
+  width:0.42em;
+  height:0.42em;
   border-radius:50%;
+  background:rgba(11,13,46,.85);
   display:flex;
   align-items:center;
   justify-content:center;
   pointer-events:none;
   -webkit-text-fill-color:initial;
 }
-.eye-ball{
-  width:0.2em;
-  height:0.2em;
-  background:#0B0D2E;
+.eye-pupil{
+  width:0.18em;
+  height:0.18em;
+  background:#fff;
   border-radius:50%;
-  transition:transform 0.08s ease-out;
-  box-shadow:inset 1px 1px 2px rgba(255,255,255,.3);
+  transition:transform 0.1s ease-out;
+  box-shadow:0 0 4px rgba(168,85,247,.5);
 }
 
 .hero-glitch{
