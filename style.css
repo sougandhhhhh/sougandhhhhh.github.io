@@ -1164,14 +1164,35 @@ a{color:inherit;text-decoration:none}
 /* ══════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════ */
+
+/* ── Tablet & small laptops (≤1024px) ── */
+@media(max-width:1024px){
+  .hero-stats{
+    grid-template-columns:repeat(2,1fr);
+    max-width:420px;
+  }
+  .certs-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .lang-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+/* ── Mobile landscape & small tablets (≤768px) ── */
 @media(max-width:768px){
+  .container{padding:0 16px}
   .hero{padding:calc(var(--nav-h) + 20px) 16px 140px}
   .hero-stats{
     grid-template-columns:repeat(2,1fr);
     max-width:320px;
+    gap:10px;
   }
   .about-grid,.contact-wrap{
     grid-template-columns:1fr;
+  }
+  .about-links{
+    justify-content:center;
   }
   .projects-grid{
     grid-template-columns:1fr;
@@ -1179,28 +1200,172 @@ a{color:inherit;text-decoration:none}
   .project-card.featured{grid-column:auto}
   .section{padding:60px 0}
   .section-title{margin-bottom:24px}
+  .section-header{margin-bottom:32px}
   .eyebrow-line{width:40px}
   .name-text{font-size:clamp(1.4rem,6vw,2.4rem)}
   .earth-surface{height:120px;bottom:-50px}
   .astronaut svg{width:40px;height:48px}
   .astronaut{bottom:55px}
+  .certs-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+  .lang-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+  }
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
+  .t-line{
+    white-space:normal;
+    word-break:break-word;
+  }
+  .terminal-body{
+    font-size:.72rem;
+    overflow-x:auto;
+  }
+  .tl-card{padding:18px}
+  .tl-desc{font-size:.82rem}
+  .project-card{padding:18px}
+  .hero-cta{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+  .hero-cta .btn{width:100%;max-width:260px;justify-content:center}
+  .footer-links{gap:12px}
+  .footer-links a{font-size:.7rem}
+  .contact-text{text-align:center}
+  .contact-text .btn{margin:0 auto}
 }
+
+/* ── Mobile portrait (≤480px) ── */
 @media(max-width:480px){
+  .container{padding:0 12px}
+  .hero{padding:calc(var(--nav-h) + 12px) 12px 120px}
   .hero-stats{
     grid-template-columns:1fr 1fr;
     gap:8px;
+    max-width:280px;
   }
   .stat-card{padding:12px 8px}
   .stat-val{font-size:1.1rem}
+  .stat-lbl{font-size:.6rem}
   .social-btn-grid{
     grid-template-columns:repeat(2,1fr);
   }
   .achievement-row{gap:6px}
-  .achievement-chip{font-size:.7rem;padding:6px 10px}
+  .achievement-chip{font-size:.68rem;padding:6px 8px}
   .skills-grid{grid-template-columns:1fr}
   .eyebrow-text{font-size:.6rem;letter-spacing:2px}
   .planet-1{right:5%}
   .planet-3{left:5%}
+  .certs-grid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .cert-card{padding:14px}
+  .cert-name{font-size:.88rem}
+  .cert-course{font-size:.72rem}
+  .cert-issuer{font-size:.6rem}
+  .lang-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+  }
+  .lang-card{padding:14px}
+  .lang-name{font-size:.9rem}
+  .lang-level{font-size:.65rem}
+  .section{padding:48px 0}
+  .section-header{
+    margin-bottom:24px;
+    gap:10px;
+  }
+  .section-tag{font-size:.6rem;letter-spacing:2px}
+  .tl-header{
+    flex-direction:column;
+    gap:4px;
+  }
+  .tl-role{font-size:.88rem}
+  .tl-company{font-size:.78rem}
+  .tl-card{padding:14px}
+  .tl-desc{font-size:.78rem}
+  .about-links .btn{
+    font-size:.72rem;
+    padding:8px 12px;
+  }
+  .body-text{font-size:.88rem}
+  .role-chip{font-size:.75rem;padding:3px 12px}
+  .hero-sub{font-size:.85rem}
+  .project-title{font-size:1rem}
+  .project-desc{font-size:.82rem}
+  .cc-value{font-size:.82rem}
+  .footer-links{gap:10px}
+  .footer-links a{font-size:.65rem}
+  .contact-card{padding:14px;gap:12px}
+}
+
+/* ── Very small phones (≤360px, e.g. Galaxy Fold) ── */
+@media(max-width:360px){
+  .container{padding:0 10px}
+  .hero{padding:calc(var(--nav-h) + 8px) 10px 100px}
+  .hero-stats{
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+    max-width:260px;
+  }
+  .stat-val{font-size:1rem}
+  .stat-lbl{font-size:.55rem}
+  .stat-card{padding:10px 6px}
+  .certs-grid{
+    grid-template-columns:1fr;
+  }
+  .lang-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+  }
+  .social-btn-grid{
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+  .social-btn-grid .btn{font-size:10px;padding:8px 4px}
+  .achievement-chip{font-size:.62rem;padding:5px 7px}
+  .role-chip{font-size:.68rem;padding:3px 10px}
+  .role-sep{font-size:.6rem}
+  .eyebrow-line{width:24px}
+  .eyebrow-text{font-size:.55rem;letter-spacing:1px}
+  .about-links .btn{
+    font-size:.65rem;
+    padding:7px 10px;
+  }
+  .tl-marker{min-width:14px}
+  .tl-dot{width:10px;height:10px}
+  .timeline-item{gap:12px}
+  .section{padding:36px 0}
+  .section-title{font-size:clamp(1.2rem,5vw,1.8rem)}
+  .footer-links{gap:8px}
+  .footer-links a{font-size:.6rem}
+  .nav-links a{font-size:.95rem}
+  .btn-nav{font-size:.65rem;padding:5px 10px}
+}
+
+/* ── Ultrawide (≥1440px) ── */
+@media(min-width:1440px){
+  .container{max-width:1200px}
+  .hero-inner{max-width:900px}
+  .hero-stats{max-width:700px}
+  .certs-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+  .lang-grid{
+    grid-template-columns:repeat(5,1fr);
+  }
+}
+
+/* ── 4K / very wide (≥1920px) ── */
+@media(min-width:1920px){
+  .container{max-width:1400px}
+  .hero-inner{max-width:1000px}
 }
 
 /* High contrast for accessibility */
