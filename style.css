@@ -526,7 +526,7 @@ body.light .theme-icon-moon{display:block}
 }
 .name-text{
   font-family:var(--font-heading);
-  font-size:clamp(2.2rem,6vw,4.5rem);
+  font-size:clamp(2.8rem,8vw,5.5rem);
   font-weight:800;
   color:var(--text-bright);
   letter-spacing:3px;
@@ -537,6 +537,52 @@ body.light .theme-icon-moon{display:block}
   text-shadow:none;
   position:relative;
 }
+
+/* Flipped A */
+.flipped-a{
+  display:inline-block;
+  transform:rotate(180deg) scaleX(-1);
+}
+.name-text .flipped-a{
+  background:inherit;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* Eye inside O */
+.eye-letter{
+  position:relative;
+  display:inline-block;
+  background:inherit;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.eye-wrap{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:0.5em;
+  height:0.5em;
+  background:radial-gradient(circle,#fff 28%,rgba(168,85,247,.85) 55%,rgba(168,85,247,.2) 100%);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  -webkit-text-fill-color:initial;
+}
+.eye-ball{
+  width:0.2em;
+  height:0.2em;
+  background:#0B0D2E;
+  border-radius:50%;
+  transition:transform 0.08s ease-out;
+  box-shadow:inset 1px 1px 2px rgba(255,255,255,.3);
+}
+
 .hero-glitch{
   animation:glitch-pulse 4s ease-in-out infinite;
 }
@@ -1385,7 +1431,7 @@ body.light .cc-label{color:#6a6a8a}
   .section-title{margin-bottom:24px}
   .section-header{margin-bottom:32px}
   .eyebrow-line{width:40px}
-  .name-text{font-size:clamp(1.4rem,6vw,2.4rem)}
+  .name-text{font-size:clamp(1.6rem,7vw,3rem)}
   .earth-surface{height:120px;bottom:-50px}
   .astronaut svg{width:40px;height:48px}
   .astronaut{bottom:55px}

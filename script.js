@@ -149,6 +149,26 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => sectionObserver.observe(s));
 
+/* ── EYE FOLLOWS CURSOR ── */
+const eyeWrap = document.getElementById('eye-wrap');
+const eyeBall = document.getElementById('eye-ball');
+
+if (eyeWrap && eyeBall) {
+  document.addEventListener('mousemove', (e) => {
+    const rect = eyeWrap.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = e.clientX - cx;
+    const dy = e.clientY - cy;
+    const angle = Math.atan2(dy, dx);
+    const maxDist = rect.width * 0.25;
+    const dist = Math.min(Math.hypot(dx, dy) * 0.08, maxDist);
+    const tx = Math.cos(angle) * dist;
+    const ty = Math.sin(angle) * dist;
+    eyeBall.style.transform = `translate(${tx}px, ${ty}px)`;
+  });
+}
+
 /* ── TERMINAL TYPING EFFECT ── */
 const terminalLines = document.querySelectorAll('.terminal-body .t-line');
 terminalLines.forEach((line, i) => {
