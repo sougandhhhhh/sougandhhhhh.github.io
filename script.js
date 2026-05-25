@@ -63,21 +63,6 @@ window.addEventListener('resize', () => {
   }
 }, { passive: true });
 
-/* ── THEME TOGGLE ── */
-const themeToggle = document.getElementById('theme-toggle');
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-  document.body.classList.add('light');
-}
-
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-  const isLight = document.body.classList.contains('light');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  document.querySelector('meta[name="theme-color"]')
-    .setAttribute('content', isLight ? '#f0f0f8' : '#0B0D2E');
-});
-
 /* ── HIRE ME DROPDOWN ── */
 const hireDropdown = document.getElementById('hire-dropdown');
 const hireBtn = document.getElementById('hire-btn');
@@ -149,25 +134,56 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => sectionObserver.observe(s));
 
-/* ── EYE FOLLOWS CURSOR ── */
-const eyeSocket = document.getElementById('eye-socket');
-const eyeIris = document.getElementById('eye-iris');
+/* ── TEXT SCRAMBLE EFFECT ── */
+(function textScramble() {
+  const el = document.getElementById('scramble-target');
+  if (!el) return;
+  const finalText = el.getAttribute('data-text') || el.textContent;
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*!?<>';
+  const len = finalText.length;
+  let frame = 0;
+  const totalFrames = 25;
 
-if (eyeSocket && eyeIris) {
-  document.addEventListener('mousemove', (e) => {
-    const rect = eyeSocket.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const dx = e.clientX - cx;
-    const dy = e.clientY - cy;
-    const angle = Math.atan2(dy, dx);
-    const maxDist = rect.width * 0.2;
-    const dist = Math.min(Math.hypot(dx, dy) * 0.05, maxDist);
-    const tx = Math.cos(angle) * dist;
-    const ty = Math.sin(angle) * dist;
-    eyeIris.style.transform = `translate(${tx}px, ${ty}px)`;
-  });
-}
+  function update() {
+    let result = '';
+    for (let i = 0; i < len; i++) {
+      if (finalText[i] === ' ') {
+        result += ' ';
+        continue;
+      }
+      const progress = frame / totalFrames;
+      const charThreshold = i / len;
+      if (progress > charThreshold) {
+        result += finalText[i];
+      } else {
+        result += chars[Math.floor(Math.random() * chars.length)];
+      }
+    }
+    el.textContent = result;
+    frame++;
+    if (frame <= totalFrames) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  setTimeout(() => {
+    el.textContent = chars.slice(0, len).split('').map(() =>
+      chars[Math.floor(Math.random() * chars.length)]
+    ).join('');
+    requestAnimationFrame(update);
+  }, 600);
+})();
+
+/* ── CLICK EFFECT (sniper crosshair) ── */
+document.addEventListener('click', (e) => {
+  const el = document.createElement('div');
+  el.className = 'click-effect';
+  el.style.left = e.clientX + 'px';
+  el.style.top = e.clientY + 'px';
+  el.innerHTML = '<div class="click-ring"></div><div class="click-ring"></div><div class="click-cross"></div>';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 600);
+});
 
 /* ── TERMINAL TYPING EFFECT ── */
 const terminalLines = document.querySelectorAll('.terminal-body .t-line');
