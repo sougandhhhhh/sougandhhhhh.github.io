@@ -255,7 +255,20 @@ body.light .logo-text:hover{
   transition:color var(--transition);
   letter-spacing:.3px;
 }
-.nav-links a:hover{color:var(--neon-purple)}
+.nav-links a{position:relative}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--neon-purple),var(--neon-pink));
+  transition:width .3s ease;
+  border-radius:1px;
+}
+.nav-links a:hover{color:var(--neon-purple);text-shadow:0 0 8px rgba(168,85,247,.4)}
+.nav-links a:hover::after{width:100%}
 .nav-num{
   color:var(--purple);
   font-family:'Space Mono',monospace;
@@ -545,7 +558,7 @@ body.light .theme-icon-moon{display:block}
   transform-origin:50% 45%;
 }
 
-/* Eye inside O — airborne.studio style */
+/* Eye inside O — realistic Framer-style */
 .eye-letter{
   position:relative;
   display:inline-block;
@@ -554,28 +567,59 @@ body.light .theme-icon-moon{display:block}
   -webkit-text-fill-color:transparent;
   background-clip:text;
 }
-.eye-iris{
+.eye-socket{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  width:0.42em;
-  height:0.42em;
+  width:0.52em;
+  height:0.52em;
   border-radius:50%;
-  background:rgba(11,13,46,.85);
+  background:var(--bg-deep,#0B0D2E);
   display:flex;
   align-items:center;
   justify-content:center;
   pointer-events:none;
   -webkit-text-fill-color:initial;
+  overflow:hidden;
+}
+.eye-sclera{
+  width:0.46em;
+  height:0.46em;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff 0%,#f0f0f5 60%,#d8d8e8 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 0 6px rgba(168,85,247,.3);
+}
+.eye-iris{
+  width:0.22em;
+  height:0.22em;
+  border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,#7c3aed 0%,#5b21b6 50%,#3b0764 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform 0.08s ease-out;
+  box-shadow:0 0 3px rgba(124,58,237,.4);
 }
 .eye-pupil{
-  width:0.18em;
-  height:0.18em;
-  background:#fff;
+  width:0.1em;
+  height:0.1em;
+  background:#0a0a0a;
   border-radius:50%;
-  transition:transform 0.1s ease-out;
-  box-shadow:0 0 4px rgba(168,85,247,.5);
+  position:relative;
+}
+.eye-pupil::after{
+  content:'';
+  position:absolute;
+  top:15%;
+  left:20%;
+  width:35%;
+  height:35%;
+  background:rgba(255,255,255,.7);
+  border-radius:50%;
 }
 
 .hero-glitch{
@@ -650,6 +694,45 @@ body.light .theme-icon-moon{display:block}
   font-size:.65rem;
   color:var(--text-dim);
   letter-spacing:.5px;
+}
+
+/* Hero marquee */
+.hero-marquee{
+  position:absolute;
+  bottom:60px;
+  left:0;
+  width:100%;
+  overflow:hidden;
+  z-index:2;
+  border-top:1px solid rgba(168,85,247,.15);
+  border-bottom:1px solid rgba(168,85,247,.15);
+  padding:10px 0;
+}
+.marquee-track{
+  display:flex;
+  gap:0;
+  white-space:nowrap;
+  animation:marquee-scroll 25s linear infinite;
+  width:max-content;
+}
+.marquee-track span{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.85rem;
+  font-weight:500;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  padding:0 16px;
+}
+.marquee-dot{
+  color:var(--neon-purple);
+  font-size:.7rem;
+  display:inline-flex;
+  align-items:center;
+}
+@keyframes marquee-scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
 }
 
 /* Earth curve */
@@ -810,6 +893,9 @@ body.light .theme-icon-moon{display:block}
 }
 #contact-block{
   justify-content:center;
+}
+#contact .container{
+  padding-top:15px;
 }
 .page-block-inner{
   flex:1;
@@ -1359,7 +1445,9 @@ body.light .hero-nebula{opacity:.08}
 body.light .earth-surface{background:linear-gradient(180deg,#c8d4e8,#a8b8d0)}
 body.light .earth-glow{opacity:.3}
 body.light .nav-links a{color:#4a4a6a}
-body.light .nav-links a:hover{color:var(--purple)}
+body.light .nav-links a:hover{color:var(--purple);text-shadow:none}
+body.light .eye-socket{background:#f0f0f8}
+body.light .marquee-track span{color:#6a6a8a}
 body.light .section-title{color:#1a1a3a}
 body.light .body-text{color:#4a4a6a}
 body.light .tl-desc{color:#5a5a7a}
