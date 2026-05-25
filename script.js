@@ -114,7 +114,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
       navAnchors.forEach(a => {
         a.style.color = '';
         if (a.getAttribute('href') === '#' + entry.target.id) {
-          a.style.color = 'var(--cyan)';
+          a.style.color = 'var(--neon-purple)';
         }
       });
     }
