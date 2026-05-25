@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <meta name="theme-color" content="#0B0D2E" />
 </head>
 <body>
@@ -34,17 +34,64 @@
 <header class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <img src="profile.jpg" alt="Sougandh K P" class="nav-avatar" />
+      <img src="logo.jpg" alt="Sougandh K P" class="nav-avatar" />
     </a>
     <nav class="nav-links" id="nav-links">
       <a href="#about"><span class="nav-num">01.</span>About</a>
       <a href="#work"><span class="nav-num">02.</span>Work</a>
       <a href="#projects"><span class="nav-num">03.</span>Projects</a>
-      <a href="#skills"><span class="nav-num">04.</span>Skills</a>
-      <a href="#contact"><span class="nav-num">05.</span>Contact</a>
+      <a href="#tools"><span class="nav-num">04.</span>Tools</a>
+      <a href="#skills"><span class="nav-num">05.</span>Skills</a>
+      <a href="#contact"><span class="nav-num">06.</span>Contact</a>
     </nav>
     <div class="nav-actions">
-      <a href="https://mail.google.com/mail/?view=cm&to=sougandh7ss@gmail.com&su=Hello%20Sougandh" target="_blank" rel="noopener" class="btn-nav">Hire Me</a>
+      <!-- Theme toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <!-- Hire Me dropdown -->
+      <div class="hire-dropdown" id="hire-dropdown">
+        <button class="btn-nav hire-btn" id="hire-btn">Hire Me</button>
+        <div class="hire-menu" id="hire-menu">
+          <a href="mailto:sougandh7ss@gmail.com" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://instagram.com/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://x.com/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X
+          </a>
+          <a href="https://discord.com/users/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            Discord
+          </a>
+          <a href="https://t.me/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.12 14.53l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.696.056z"/></svg>
+            Telegram
+          </a>
+          <a href="https://snapchat.com/add/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .299.044.404.12.18.15.277.395.277.61 0 .195-.089.39-.25.558-.32.32-.74.513-1.124.633-.133.042-.232.069-.333.099-.2.06-.324.1-.447.234-.12.123-.16.27-.107.448l.013.046c.576 1.224 1.637 2.48 3.041 2.897.237.06.394.277.357.517-.098.65-.965 1.112-2.469 1.407-.115.023-.205.09-.25.223l-.023.076c-.06.22-.1.384-.163.59-.063.21-.264.357-.48.357-.062 0-.133-.015-.18-.046-.344-.135-.664-.197-1.011-.197-.363 0-.712.045-1.048.136-.448.14-.876.52-1.356.936-.498.435-1.066.933-1.792.933-.016 0-.031 0-.047-.002-.019.002-.039.002-.058.002-.706 0-1.264-.474-1.77-.933-.474-.409-.895-.795-1.341-.936-.341-.091-.69-.136-1.049-.136-.344 0-.66.06-1.01.196l-.028.01c-.049.03-.119.045-.18.045-.221 0-.428-.152-.485-.358-.06-.19-.1-.347-.158-.576l-.024-.08c-.045-.138-.14-.21-.26-.234-1.505-.299-2.36-.765-2.457-1.407-.035-.24.12-.457.357-.52 1.399-.414 2.468-1.67 3.041-2.896l.015-.046c.055-.18.014-.322-.107-.446-.115-.12-.243-.16-.431-.22-.2-.07-.313-.1-.463-.143-.384-.12-.746-.285-1.009-.505a.87.87 0 01-.245-.55c0-.211.086-.451.283-.605.105-.077.227-.12.396-.12.12 0 .3.02.46.104.375.18.737.299 1.041.299.182 0 .301-.06.39-.09l-.003-.046c-.007-.165-.017-.33-.03-.51l-.003-.06c-.104-1.628-.23-3.654.3-4.848C7.86 1.069 11.216.793 12.206.793z"/></svg>
+            Snapchat
+          </a>
+          <a href="https://facebook.com/sougandhhhhh" target="_blank" rel="noopener" class="hire-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 1.092.079 1.375.157v3.322a8.42 8.42 0 00-.731-.026c-1.036 0-1.438.396-1.438 1.428v2.677h3.36l-.384 3.667h-2.976v8.138C19.396 23.063 24 18.04 24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.628 3.874 10.35 9.101 11.691z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -53,7 +100,7 @@
 </header>
 
 <!-- ── HERO ── -->
-<section class="hero" id="hero">
+<section class="hero page-block" id="hero">
   <div class="hero-nebula" aria-hidden="true"></div>
 
   <!-- Floating planets -->
@@ -62,26 +109,9 @@
   <div class="planet planet-3" aria-hidden="true"></div>
 
   <div class="hero-inner">
-    <div class="hero-eyebrow reveal">
-      <span class="eyebrow-line"></span>
-      <span class="mono eyebrow-text">A MESSAGE FROM EARTH</span>
-      <span class="eyebrow-line"></span>
-    </div>
-
-    <h1 class="hero-title reveal">
-      <span class="title-line glow-text">HELLO FELLOW</span>
-      <span class="title-line title-accent glow-text-strong">GALAXY MEMBER</span>
-    </h1>
-
-    <div class="hero-subtitle reveal">
-      <span class="eyebrow-line"></span>
-      <span class="mono eyebrow-text">A MESSAGE FROM EARTH</span>
-      <span class="eyebrow-line"></span>
-    </div>
-
     <div class="hero-name reveal">
       <span class="name-label mono">I AM</span>
-      <h2 class="name-text">SOUGANDH K P</h2>
+      <h1 class="name-text hero-glitch" data-text="SOUGANDH K P">SOUGANDH K P</h1>
     </div>
 
     <div class="hero-roles reveal">
@@ -107,25 +137,6 @@
         GitHub
       </a>
     </div>
-
-    <div class="hero-stats reveal">
-      <div class="stat-card glass-card">
-        <span class="stat-val purple">132</span>
-        <span class="stat-lbl">Commits This Month</span>
-      </div>
-      <div class="stat-card glass-card">
-        <span class="stat-val pink">3</span>
-        <span class="stat-lbl">Public Repos</span>
-      </div>
-      <div class="stat-card glass-card">
-        <span class="stat-val blue">68+</span>
-        <span class="stat-lbl">Formats in Converto</span>
-      </div>
-      <div class="stat-card glass-card">
-        <span class="stat-val purple">GSSoC</span>
-        <span class="stat-lbl">Contributor 2026</span>
-      </div>
-    </div>
   </div>
 
   <!-- Earth curve at bottom -->
@@ -148,8 +159,8 @@
 </section>
 
 <!-- ── ABOUT ── -->
-<section class="section" id="about">
-  <div class="container">
+<section class="section page-block" id="about">
+  <div class="container page-block-inner">
     <div class="section-header reveal">
       <span class="section-num mono">01</span>
       <span class="section-line"></span>
@@ -168,26 +179,8 @@
         <p class="body-text reveal">
           I'm a <span class="highlight">Google Student Ambassador</span>, <span class="highlight">GSSoC 2026 contributor</span>,
           and a Cyber Security member at CodeKrafters.
-          I've earned GitHub achievements including Pull Shark &times;2, YOLO, Quickdraw, and Pair Extraordinaire.
           When I'm not coding, I'm probably thinking about the next thing to build.
         </p>
-        <div class="achievement-row reveal">
-          <div class="achievement-chip glass-card">
-            <span class="ach-icon">🎯</span> Pull Shark &times;2
-          </div>
-          <div class="achievement-chip glass-card">
-            <span class="ach-icon">⚡</span> YOLO
-          </div>
-          <div class="achievement-chip glass-card">
-            <span class="ach-icon">🚀</span> Quickdraw
-          </div>
-          <div class="achievement-chip glass-card">
-            <span class="ach-icon">🤝</span> Pair Extraordinaire
-          </div>
-          <div class="achievement-chip glass-card">
-            <span class="ach-icon">🌐</span> Google Ambassador
-          </div>
-        </div>
         <div class="about-links reveal">
           <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-purple">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -231,9 +224,9 @@
           <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"gssoc"</span>: <span class="t-bool">true</span>,</div>
           <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"google_ambassador"</span>: <span class="t-bool">true</span>,</div>
           <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"languages"</span>: <span class="t-str">"EN, DE, HI, ML, TA"</span>,</div>
-          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-str">"🎯 Focusing"</span></div>
+          <div class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-str">"Focusing"</span></div>
           <div class="t-line t-out">}</div>
-          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor">█</span></div>
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor">|</span></div>
         </div>
       </div>
     </div>
@@ -241,8 +234,8 @@
 </section>
 
 <!-- ── WORK ── -->
-<section class="section" id="work">
-  <div class="container">
+<section class="section page-block" id="work">
+  <div class="container page-block-inner">
     <div class="section-header reveal">
       <span class="section-num mono">02</span>
       <span class="section-line"></span>
@@ -386,8 +379,8 @@
 </section>
 
 <!-- ── PROJECTS ── -->
-<section class="section" id="projects">
-  <div class="container">
+<section class="section page-block" id="projects">
+  <div class="container page-block-inner">
     <div class="section-header reveal">
       <span class="section-num mono">03</span>
       <span class="section-line"></span>
@@ -493,13 +486,13 @@
   </div>
 </section>
 
-<!-- ── SKILLS ── -->
-<section class="section" id="skills">
-  <div class="container">
+<!-- ── TOOLS (was Tech Stack / Skills) ── -->
+<section class="section page-block" id="tools">
+  <div class="container page-block-inner">
     <div class="section-header reveal">
       <span class="section-num mono">04</span>
       <span class="section-line"></span>
-      <span class="section-tag">TECH_STACK</span>
+      <span class="section-tag">TOOLS</span>
     </div>
     <h2 class="section-title reveal">My<br/><span class="neon-purple">arsenal.</span></h2>
 
@@ -609,16 +602,18 @@
   </div>
 </section>
 
-<!-- ── CERTIFICATIONS ── -->
-<section class="section" id="certifications">
-  <div class="container">
+<!-- ── SKILLS (merged Certifications + Languages) ── -->
+<section class="section page-block" id="skills">
+  <div class="container page-block-inner">
     <div class="section-header reveal">
       <span class="section-num mono">05</span>
       <span class="section-line"></span>
-      <span class="section-tag">CERTIFICATIONS</span>
+      <span class="section-tag">SKILLS</span>
     </div>
-    <h2 class="section-title reveal">Verified<br/><span class="neon-pink">knowledge.</span></h2>
+    <h2 class="section-title reveal">Verified knowledge<br/>&amp; <span class="neon-pink">languages.</span></h2>
 
+    <!-- Certifications -->
+    <h3 class="subsection-title reveal">Certifications</h3>
     <div class="certs-grid">
       <div class="cert-card glass-card glow-border-blue reveal">
         <div class="cert-issuer mono blue">IBM</div>
@@ -661,19 +656,9 @@
         <div class="cert-course">AI for Management</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ── LANGUAGES ── -->
-<section class="section" id="languages">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-num mono">06</span>
-      <span class="section-line"></span>
-      <span class="section-tag">LANGUAGES</span>
-    </div>
-    <h2 class="section-title reveal">I speak<br/><span class="neon-blue">multiple.</span></h2>
-
+    <!-- Languages -->
+    <h3 class="subsection-title reveal" style="margin-top:48px">Languages</h3>
     <div class="lang-grid reveal">
       <div class="lang-card glass-card">
         <div class="lang-name">Malayalam</div>
@@ -715,10 +700,10 @@
 </section>
 
 <!-- ── CONTACT ── -->
-<section class="section" id="contact">
-  <div class="container">
+<section class="section page-block" id="contact">
+  <div class="container page-block-inner">
     <div class="section-header reveal">
-      <span class="section-num mono">07</span>
+      <span class="section-num mono">06</span>
       <span class="section-line"></span>
       <span class="section-tag">CONTACT</span>
     </div>
@@ -789,8 +774,7 @@
 <!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-logo"><img src="profile.jpg" alt="Sougandh K P" class="footer-avatar" /></div>
-    <div class="footer-text mono">// Built by Sougandh K P &mdash; SRMIST '28</div>
+    <div class="footer-logo"><img src="logo.jpg" alt="Sougandh K P" class="footer-avatar" /></div>
     <div class="footer-links">
       <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/sougandhhhhh" target="_blank" rel="noopener">LinkedIn</a>
@@ -805,6 +789,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
