@@ -1401,7 +1401,12 @@ a{color:inherit;text-decoration:none}
   opacity:0;
   transition:opacity .2s ease;
   will-change:transform;
-  filter:drop-shadow(0 0 6px rgba(168,85,247,.4));
+  filter:drop-shadow(0 0 8px rgba(168,85,247,.6)) drop-shadow(0 0 16px rgba(168,85,247,.3)) drop-shadow(0 0 24px rgba(124,58,237,.2));
+  animation:cursor-pulse 2s ease-in-out infinite;
+}
+@keyframes cursor-pulse{
+  0%,100%{filter:drop-shadow(0 0 8px rgba(168,85,247,.6)) drop-shadow(0 0 16px rgba(168,85,247,.3)) drop-shadow(0 0 24px rgba(124,58,237,.2))}
+  50%{filter:drop-shadow(0 0 12px rgba(168,85,247,.8)) drop-shadow(0 0 22px rgba(168,85,247,.5)) drop-shadow(0 0 32px rgba(124,58,237,.35))}
 }
 body:not(.touch) *{cursor:none !important}
 body:not(.touch) a,body:not(.touch) a *,

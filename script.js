@@ -249,9 +249,17 @@ document.addEventListener('click', (e) => {
 
   const cursor = document.createElement('div');
   cursor.className = 'dir-cursor';
-  cursor.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 50 54" fill="none">' +
-    '<path d="M42.68 41.15L27.51 6.8C26.73 5.03 24.21 5.03 23.39 6.8L7.6 41.15C6.76 42.98 8.53 44.89 10.41 44.2L24.38 39.05C24.88 38.86 25.44 38.86 25.94 39.05L39.81 44.2C41.68 44.89 43.49 42.98 42.68 41.15Z" fill="var(--neon-purple)"/>' +
-    '<path d="M43.71 40.69L28.54 6.34C27.36 3.65 23.58 3.7 22.37 6.33L6.57 40.68C5.31 43.42 7.97 46.3 10.8 45.25L24.77 40.11C25.02 40.01 25.3 40.02 25.55 40.11L39.42 45.25C42.23 46.3 44.93 43.43 43.71 40.69Z" stroke="rgba(168,85,247,.5)" stroke-width="1.5"/>' +
+  cursor.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" viewBox="0 0 50 54" fill="none">' +
+    '<defs>' +
+    '<linearGradient id="cursor-grad" x1="25" y1="5" x2="25" y2="45" gradientUnits="userSpaceOnUse">' +
+    '<stop offset="0%" stop-color="#c084fc"/>' +
+    '<stop offset="100%" stop-color="#7c3aed"/>' +
+    '</linearGradient>' +
+    '<filter id="cursor-glow"><feGaussianBlur stdDeviation="2" result="blur"/>' +
+    '<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
+    '</defs>' +
+    '<path d="M42.68 41.15L27.51 6.8C26.73 5.03 24.21 5.03 23.39 6.8L7.6 41.15C6.76 42.98 8.53 44.89 10.41 44.2L24.38 39.05C24.88 38.86 25.44 38.86 25.94 39.05L39.81 44.2C41.68 44.89 43.49 42.98 42.68 41.15Z" fill="url(#cursor-grad)" filter="url(#cursor-glow)"/>' +
+    '<path d="M43.71 40.69L28.54 6.34C27.36 3.65 23.58 3.7 22.37 6.33L6.57 40.68C5.31 43.42 7.97 46.3 10.8 45.25L24.77 40.11C25.02 40.01 25.3 40.02 25.55 40.11L39.42 45.25C42.23 46.3 44.93 43.43 43.71 40.69Z" stroke="white" stroke-width="2.2"/>' +
     '</svg>';
   document.body.appendChild(cursor);
 
