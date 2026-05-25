@@ -10,13 +10,25 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <meta name="theme-color" content="#0a0a12" /></head>
+  <meta name="theme-color" content="#0B0D2E" />
+</head>
 <body>
 
-<!-- ── SCANLINE OVERLAY ── -->
-<div class="scanlines" aria-hidden="true"></div>
+<!-- ── STAR FIELD ── -->
+<div class="stars-layer" aria-hidden="true">
+  <div class="stars stars-sm"></div>
+  <div class="stars stars-md"></div>
+  <div class="stars stars-lg"></div>
+</div>
+
+<!-- ── SHOOTING STARS ── -->
+<div class="shooting-stars" aria-hidden="true">
+  <span class="shooting-star"></span>
+  <span class="shooting-star"></span>
+  <span class="shooting-star"></span>
+</div>
 
 <!-- ── NAVBAR ── -->
 <header class="navbar" id="navbar">
@@ -42,20 +54,35 @@
 
 <!-- ── HERO ── -->
 <section class="hero" id="hero">
-  <div class="hero-grid-bg" aria-hidden="true"></div>
-  <div class="hero-glow-cyan" aria-hidden="true"></div>
-  <div class="hero-glow-magenta" aria-hidden="true"></div>
+  <div class="hero-nebula" aria-hidden="true"></div>
+
+  <!-- Floating planets -->
+  <div class="planet planet-1" aria-hidden="true"></div>
+  <div class="planet planet-2" aria-hidden="true"></div>
+  <div class="planet planet-3" aria-hidden="true"></div>
 
   <div class="hero-inner">
     <div class="hero-eyebrow reveal">
-      <span class="eyebrow-dot"></span>
-      <span class="mono">SRMIST '28 &nbsp;·&nbsp; CHENNAI, INDIA &nbsp;·&nbsp; OPEN TO WORK</span>
+      <span class="eyebrow-line"></span>
+      <span class="mono eyebrow-text">A MESSAGE FROM EARTH</span>
+      <span class="eyebrow-line"></span>
     </div>
 
     <h1 class="hero-title reveal">
-      <span class="title-line">SOUGANDH</span>
-      <span class="title-line title-accent">K&nbsp;P</span>
+      <span class="title-line glow-text">HELLO FELLOW</span>
+      <span class="title-line title-accent glow-text-strong">GALAXY MEMBER</span>
     </h1>
+
+    <div class="hero-subtitle reveal">
+      <span class="eyebrow-line"></span>
+      <span class="mono eyebrow-text">A MESSAGE FROM EARTH</span>
+      <span class="eyebrow-line"></span>
+    </div>
+
+    <div class="hero-name reveal">
+      <span class="name-label mono">I AM</span>
+      <h2 class="name-text">SOUGANDH K P</h2>
+    </div>
 
     <div class="hero-roles reveal">
       <span class="role-chip">Full Stack Dev</span>
@@ -66,39 +93,56 @@
     </div>
 
     <p class="hero-sub reveal">
-      B.Tech CSE Sophomore building real software that ships.
-      From async file conversion engines to gamified chore apps —
-      I write code that actually does something.
+      B.Tech CSE Sophomore building real software that ships.<br/>
+      SRMIST '28 &middot; Chennai, India &middot; Open to Work
     </p>
 
     <div class="hero-cta reveal">
-      <a href="#projects" class="btn btn-primary">
+      <a href="#projects" class="btn btn-glow">
         <span>View Projects</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-ghost">
+      <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-ghost-space">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
         GitHub
       </a>
     </div>
 
     <div class="hero-stats reveal">
-      <div class="stat-card">
-        <span class="stat-val cyan">132</span>
+      <div class="stat-card glass-card">
+        <span class="stat-val purple">132</span>
         <span class="stat-lbl">Commits This Month</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-val magenta">3</span>
+      <div class="stat-card glass-card">
+        <span class="stat-val pink">3</span>
         <span class="stat-lbl">Public Repos</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-val yellow">68+</span>
+      <div class="stat-card glass-card">
+        <span class="stat-val blue">68+</span>
         <span class="stat-lbl">Formats in Converto</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-val cyan">GSSoC</span>
+      <div class="stat-card glass-card">
+        <span class="stat-val purple">GSSoC</span>
         <span class="stat-lbl">Contributor 2026</span>
       </div>
+    </div>
+  </div>
+
+  <!-- Earth curve at bottom -->
+  <div class="earth-curve" aria-hidden="true">
+    <div class="earth-glow"></div>
+    <div class="earth-surface"></div>
+    <div class="astronaut">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" width="60" height="72">
+        <ellipse cx="50" cy="35" rx="20" ry="22" fill="#e8e8f0" stroke="#b8b8d0" stroke-width="2"/>
+        <rect x="38" y="25" rx="3" width="24" height="16" fill="#3B82F6" opacity="0.7"/>
+        <rect x="30" y="55" rx="10" width="40" height="45" fill="#e8e8f0" stroke="#b8b8d0" stroke-width="2"/>
+        <rect x="35" y="60" rx="5" width="30" height="20" fill="#A855F7" opacity="0.5"/>
+        <rect x="20" y="58" rx="5" width="14" height="35" fill="#e8e8f0" stroke="#b8b8d0" stroke-width="2"/>
+        <rect x="66" y="58" rx="5" width="14" height="35" fill="#e8e8f0" stroke="#b8b8d0" stroke-width="2"/>
+        <rect x="33" y="98" rx="5" width="14" height="20" fill="#e8e8f0" stroke="#b8b8d0" stroke-width="2"/>
+        <rect x="53" y="98" rx="5" width="14" height="20" fill="#e8e8f0" stroke="#b8b8d0" stroke-width="2"/>
+      </svg>
     </div>
   </div>
 </section>
@@ -114,7 +158,7 @@
     <div class="about-grid">
       <div class="about-text">
         <h2 class="section-title reveal">
-          I turn caffeine<br/>into <span class="neon-cyan">working software.</span>
+          I turn caffeine<br/>into <span class="neon-purple">working software.</span>
         </h2>
         <p class="body-text reveal">
           Hey — I'm Sougandh K P, a B.Tech Computer Science sophomore at <span class="highlight">SRMIST, Chennai</span>.
@@ -123,47 +167,47 @@
         </p>
         <p class="body-text reveal">
           I'm a <span class="highlight">GSSoC 2026 contributor</span>, a tech enthusiast, and an AI explorer.
-          I've earned GitHub achievements including Pull Shark ×2, YOLO, Quickdraw, and Pair Extraordinaire.
+          I've earned GitHub achievements including Pull Shark &times;2, YOLO, Quickdraw, and Pair Extraordinaire.
           When I'm not coding, I'm probably thinking about the next thing to build.
         </p>
         <div class="achievement-row reveal">
-          <div class="achievement-chip">
-            <span class="ach-icon">🎯</span> Pull Shark ×2
+          <div class="achievement-chip glass-card">
+            <span class="ach-icon">🎯</span> Pull Shark &times;2
           </div>
-          <div class="achievement-chip">
+          <div class="achievement-chip glass-card">
             <span class="ach-icon">⚡</span> YOLO
           </div>
-          <div class="achievement-chip">
+          <div class="achievement-chip glass-card">
             <span class="ach-icon">🚀</span> Quickdraw
           </div>
-          <div class="achievement-chip">
+          <div class="achievement-chip glass-card">
             <span class="ach-icon">🤝</span> Pair Extraordinaire
           </div>
         </div>
         <div class="about-links reveal">
-          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-cyan">
+          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-purple">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub
           </a>
-          <a href="https://linkedin.com/in/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-cyan">
+          <a href="https://linkedin.com/in/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-purple">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
-          <a href="https://x.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-magenta">
+          <a href="https://x.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-pink">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             X
           </a>
-          <a href="https://instagram.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-magenta">
+          <a href="https://instagram.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-pink">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
-          <a href="mailto:sougandh7ss@gmail.com" class="btn btn-outline-yellow">
+          <a href="mailto:sougandh7ss@gmail.com" class="btn btn-outline-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             Email
           </a>
         </div>
       </div>
-      <div class="about-terminal reveal">
+      <div class="about-terminal glass-card reveal">
         <div class="terminal-bar">
           <span class="t-dot red"></span>
           <span class="t-dot yellow"></span>
@@ -191,14 +235,14 @@
 </section>
 
 <!-- ── WORK ── -->
-<section class="section section-alt" id="work">
+<section class="section" id="work">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-num mono">02</span>
       <span class="section-line"></span>
       <span class="section-tag">EXPERIENCE</span>
     </div>
-    <h2 class="section-title reveal">What I've been<br/><span class="neon-magenta">shipping.</span></h2>
+    <h2 class="section-title reveal">What I've been<br/><span class="neon-pink">shipping.</span></h2>
 
     <div class="timeline">
       <div class="timeline-item reveal">
@@ -206,11 +250,11 @@
           <div class="tl-dot"></div>
           <div class="tl-line"></div>
         </div>
-        <div class="tl-card neon-card-cyan">
+        <div class="tl-card glass-card glow-border-purple">
           <div class="tl-header">
             <div>
               <div class="tl-role">Founder &amp; Lead Developer</div>
-              <div class="tl-company cyan">Converto — Universal File Converter</div>
+              <div class="tl-company purple">Converto — Universal File Converter</div>
             </div>
             <span class="tl-date mono">2025 – Present</span>
           </div>
@@ -221,11 +265,11 @@
             132 commits in May 2026 alone.
           </p>
           <div class="tl-tags">
-            <span class="tag-cyber cyan">Next.js 16</span>
-            <span class="tag-cyber magenta">FastAPI</span>
-            <span class="tag-cyber yellow">Celery</span>
-            <span class="tag-cyber cyan">Docker</span>
-            <span class="tag-cyber magenta">Redis</span>
+            <span class="tag-space purple">Next.js 16</span>
+            <span class="tag-space pink">FastAPI</span>
+            <span class="tag-space blue">Celery</span>
+            <span class="tag-space purple">Docker</span>
+            <span class="tag-space pink">Redis</span>
           </div>
         </div>
       </div>
@@ -235,11 +279,11 @@
           <div class="tl-dot"></div>
           <div class="tl-line"></div>
         </div>
-        <div class="tl-card neon-card-magenta">
+        <div class="tl-card glass-card glow-border-pink">
           <div class="tl-header">
             <div>
               <div class="tl-role">Builder</div>
-              <div class="tl-company magenta">ChoreWars — Gamified Chore Management</div>
+              <div class="tl-company pink">ChoreWars — Gamified Chore Management</div>
             </div>
             <span class="tl-date mono">May 2026</span>
           </div>
@@ -249,10 +293,10 @@
             leaderboards, interactive calendar, and a reward polling system. Deployed on Vercel with Supabase.
           </p>
           <div class="tl-tags">
-            <span class="tag-cyber magenta">Next.js</span>
-            <span class="tag-cyber cyan">Supabase</span>
-            <span class="tag-cyber yellow">Zustand</span>
-            <span class="tag-cyber magenta">TypeScript</span>
+            <span class="tag-space pink">Next.js</span>
+            <span class="tag-space purple">Supabase</span>
+            <span class="tag-space blue">Zustand</span>
+            <span class="tag-space pink">TypeScript</span>
           </div>
         </div>
       </div>
@@ -261,23 +305,23 @@
         <div class="tl-marker">
           <div class="tl-dot"></div>
         </div>
-        <div class="tl-card neon-card-yellow">
+        <div class="tl-card glass-card glow-border-blue">
           <div class="tl-header">
             <div>
               <div class="tl-role">Open Source Contributor</div>
-              <div class="tl-company yellow">GSSoC 2026 — GirlScript Summer of Code</div>
+              <div class="tl-company blue">GSSoC 2026 — GirlScript Summer of Code</div>
             </div>
             <span class="tl-date mono">2026</span>
           </div>
           <p class="tl-desc">
             Contributing to open source projects as part of GSSoC 2026. Earned GitHub achievements
-            including Pull Shark ×2 for merged pull requests. First PR on GitHub was a Converto
+            including Pull Shark &times;2 for merged pull requests. First PR on GitHub was a Converto
             Conversion Engine Audit Report.
           </p>
           <div class="tl-tags">
-            <span class="tag-cyber yellow">Open Source</span>
-            <span class="tag-cyber cyan">GitHub</span>
-            <span class="tag-cyber magenta">Pull Shark ×2</span>
+            <span class="tag-space blue">Open Source</span>
+            <span class="tag-space purple">GitHub</span>
+            <span class="tag-space pink">Pull Shark &times;2</span>
           </div>
         </div>
       </div>
@@ -293,15 +337,15 @@
       <span class="section-line"></span>
       <span class="section-tag">PROJECTS</span>
     </div>
-    <h2 class="section-title reveal">Things I've<br/><span class="neon-cyan">built.</span></h2>
+    <h2 class="section-title reveal">Things I've<br/><span class="neon-blue">built.</span></h2>
 
     <div class="projects-grid">
 
       <!-- CONVERTO -->
-      <div class="project-card featured reveal">
+      <div class="project-card featured glass-card reveal">
         <div class="project-card-inner">
           <div class="project-top">
-            <div class="project-icon-wrap cyan">
+            <div class="project-icon-wrap purple">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
             </div>
             <span class="project-badge-featured mono">// FEATURED</span>
@@ -313,23 +357,23 @@
             Full Docker orchestration. Built and shipped solo.
           </p>
           <div class="project-meta mono">
-            <span class="meta-item"><span class="cyan">★</span> 1 star</span>
-            <span class="meta-item"><span class="cyan">⌥</span> TypeScript</span>
-            <span class="meta-item"><span class="cyan">⚡</span> 69 commits/month</span>
+            <span class="meta-item"><span class="purple">★</span> 1 star</span>
+            <span class="meta-item"><span class="purple">⌥</span> TypeScript</span>
+            <span class="meta-item"><span class="purple">⚡</span> 69 commits/month</span>
           </div>
           <div class="project-tags">
-            <span class="tag-cyber cyan">Next.js 16</span>
-            <span class="tag-cyber magenta">FastAPI</span>
-            <span class="tag-cyber yellow">Docker</span>
-            <span class="tag-cyber cyan">Redis</span>
-            <span class="tag-cyber magenta">Celery</span>
+            <span class="tag-space purple">Next.js 16</span>
+            <span class="tag-space pink">FastAPI</span>
+            <span class="tag-space blue">Docker</span>
+            <span class="tag-space purple">Redis</span>
+            <span class="tag-space pink">Celery</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sougandhhhhh/Converto" target="_blank" rel="noopener" class="btn btn-outline-cyan btn-sm">
+            <a href="https://github.com/sougandhhhhh/Converto" target="_blank" rel="noopener" class="btn btn-outline-purple btn-sm">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               Source
             </a>
-            <a href="https://converto-app.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+            <a href="https://converto-app.vercel.app" target="_blank" rel="noopener" class="btn btn-glow btn-sm">
               Live Demo →
             </a>
           </div>
@@ -337,10 +381,10 @@
       </div>
 
       <!-- CHOREWARS -->
-      <div class="project-card reveal">
+      <div class="project-card glass-card reveal">
         <div class="project-card-inner">
           <div class="project-top">
-            <div class="project-icon-wrap magenta">
+            <div class="project-icon-wrap pink">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
             </div>
           </div>
@@ -350,41 +394,41 @@
             Radar charts, leaderboards, reward polling, interactive calendar. Supabase backend.
           </p>
           <div class="project-meta mono">
-            <span class="meta-item"><span class="magenta">★</span> 1 star</span>
-            <span class="meta-item"><span class="magenta">⌥</span> TypeScript 78.7%</span>
+            <span class="meta-item"><span class="pink">★</span> 1 star</span>
+            <span class="meta-item"><span class="pink">⌥</span> TypeScript</span>
           </div>
           <div class="project-tags">
-            <span class="tag-cyber magenta">Next.js</span>
-            <span class="tag-cyber cyan">Supabase</span>
-            <span class="tag-cyber yellow">Zustand</span>
+            <span class="tag-space pink">Next.js</span>
+            <span class="tag-space purple">Supabase</span>
+            <span class="tag-space blue">Zustand</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sougandhhhhh/ChoreWars" target="_blank" rel="noopener" class="btn btn-outline-magenta btn-sm">Source</a>
-            <a href="https://chorewars2026.vercel.app" target="_blank" rel="noopener" class="btn btn-outline-magenta btn-sm">Live →</a>
+            <a href="https://github.com/sougandhhhhh/ChoreWars" target="_blank" rel="noopener" class="btn btn-outline-pink btn-sm">Source</a>
+            <a href="https://chorewars2026.vercel.app" target="_blank" rel="noopener" class="btn btn-outline-pink btn-sm">Live →</a>
           </div>
         </div>
       </div>
 
       <!-- PORTFOLIO -->
-      <div class="project-card reveal">
+      <div class="project-card glass-card reveal">
         <div class="project-card-inner">
           <div class="project-top">
-            <div class="project-icon-wrap yellow">
+            <div class="project-icon-wrap blue">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
             </div>
           </div>
           <h3 class="project-title">This Portfolio</h3>
           <p class="project-desc">
-            Vanilla HTML/CSS/JS. Cyberpunk × Bold Tech aesthetic. Scanlines, neon glows,
-            terminal UI, neo-brutalist buttons. No framework, no build step. Pure craft.
+            Space-themed portfolio. Vanilla HTML/CSS/JS. Animated star field, glassmorphism cards,
+            neon glow effects, shooting stars. No framework, no build step. Pure craft.
           </p>
           <div class="project-tags">
-            <span class="tag-cyber yellow">HTML</span>
-            <span class="tag-cyber cyan">CSS</span>
-            <span class="tag-cyber magenta">JavaScript</span>
+            <span class="tag-space blue">HTML</span>
+            <span class="tag-space purple">CSS</span>
+            <span class="tag-space pink">JavaScript</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sougandhhhhh/sougandhhhhh.github.io" target="_blank" rel="noopener" class="btn btn-outline-yellow btn-sm">Source</a>
+            <a href="https://github.com/sougandhhhhh/sougandhhhhh.github.io" target="_blank" rel="noopener" class="btn btn-outline-blue btn-sm">Source</a>
           </div>
         </div>
       </div>
@@ -394,113 +438,113 @@
 </section>
 
 <!-- ── SKILLS ── -->
-<section class="section section-alt" id="skills">
+<section class="section" id="skills">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-num mono">04</span>
       <span class="section-line"></span>
       <span class="section-tag">TECH_STACK</span>
     </div>
-    <h2 class="section-title reveal">My<br/><span class="neon-yellow">arsenal.</span></h2>
+    <h2 class="section-title reveal">My<br/><span class="neon-purple">arsenal.</span></h2>
 
     <div class="skills-grid">
-      <div class="skill-group reveal">
-        <div class="skill-group-label mono cyan">// FRONTEND</div>
+      <div class="skill-group glass-card reveal">
+        <div class="skill-group-label mono purple">// FRONTEND</div>
         <div class="skill-list">
           <div class="skill-item">
             <span class="skill-name">Next.js / React</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:92%"></div></div>
-              <span class="skill-pct mono cyan">92%</span>
+              <div class="skill-bar"><div class="skill-fill purple" style="--pct:92%"></div></div>
+              <span class="skill-pct mono purple">92%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">TypeScript</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:88%"></div></div>
-              <span class="skill-pct mono cyan">88%</span>
+              <div class="skill-bar"><div class="skill-fill purple" style="--pct:88%"></div></div>
+              <span class="skill-pct mono purple">88%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Tailwind CSS</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:90%"></div></div>
-              <span class="skill-pct mono cyan">90%</span>
+              <div class="skill-bar"><div class="skill-fill purple" style="--pct:90%"></div></div>
+              <span class="skill-pct mono purple">90%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Framer Motion</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill cyan" style="--pct:78%"></div></div>
-              <span class="skill-pct mono cyan">78%</span>
+              <div class="skill-bar"><div class="skill-fill purple" style="--pct:78%"></div></div>
+              <span class="skill-pct mono purple">78%</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="skill-group reveal">
-        <div class="skill-group-label mono magenta">// BACKEND</div>
+      <div class="skill-group glass-card reveal">
+        <div class="skill-group-label mono pink">// BACKEND</div>
         <div class="skill-list">
           <div class="skill-item">
             <span class="skill-name">Python / FastAPI</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:90%"></div></div>
-              <span class="skill-pct mono magenta">90%</span>
+              <div class="skill-bar"><div class="skill-fill pink" style="--pct:90%"></div></div>
+              <span class="skill-pct mono pink">90%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Node.js</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:82%"></div></div>
-              <span class="skill-pct mono magenta">82%</span>
+              <div class="skill-bar"><div class="skill-fill pink" style="--pct:82%"></div></div>
+              <span class="skill-pct mono pink">82%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Celery / Redis</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:78%"></div></div>
-              <span class="skill-pct mono magenta">78%</span>
+              <div class="skill-bar"><div class="skill-fill pink" style="--pct:78%"></div></div>
+              <span class="skill-pct mono pink">78%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Supabase / tRPC</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill magenta" style="--pct:84%"></div></div>
-              <span class="skill-pct mono magenta">84%</span>
+              <div class="skill-bar"><div class="skill-fill pink" style="--pct:84%"></div></div>
+              <span class="skill-pct mono pink">84%</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="skill-group reveal">
-        <div class="skill-group-label mono yellow">// INFRA &amp; TOOLS</div>
+      <div class="skill-group glass-card reveal">
+        <div class="skill-group-label mono blue">// INFRA &amp; TOOLS</div>
         <div class="skill-list">
           <div class="skill-item">
             <span class="skill-name">Docker / Compose</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:85%"></div></div>
-              <span class="skill-pct mono yellow">85%</span>
+              <div class="skill-bar"><div class="skill-fill blue" style="--pct:85%"></div></div>
+              <span class="skill-pct mono blue">85%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Vercel / Render</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:90%"></div></div>
-              <span class="skill-pct mono yellow">90%</span>
+              <div class="skill-bar"><div class="skill-fill blue" style="--pct:90%"></div></div>
+              <span class="skill-pct mono blue">90%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Git / GitHub</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:95%"></div></div>
-              <span class="skill-pct mono yellow">95%</span>
+              <div class="skill-bar"><div class="skill-fill blue" style="--pct:95%"></div></div>
+              <span class="skill-pct mono blue">95%</span>
             </div>
           </div>
           <div class="skill-item">
             <span class="skill-name">AWS S3 / R2</span>
             <div class="skill-bar-wrap">
-              <div class="skill-bar"><div class="skill-fill yellow" style="--pct:72%"></div></div>
-              <span class="skill-pct mono yellow">72%</span>
+              <div class="skill-bar"><div class="skill-fill blue" style="--pct:72%"></div></div>
+              <span class="skill-pct mono blue">72%</span>
             </div>
           </div>
         </div>
@@ -520,21 +564,21 @@
     <div class="contact-wrap">
       <div class="contact-text">
         <h2 class="section-title reveal">
-          Let's build<br/><span class="neon-cyan">something.</span>
+          Let's build<br/><span class="neon-purple">something.</span>
         </h2>
         <p class="body-text reveal">
           I'm always open to interesting projects, collaborations, or just a good
           conversation about tech. Whether you want to work together or just say hi —
           reach out.
         </p>
-        <a href="https://mail.google.com/mail/?view=cm&to=sougandh7ss@gmail.com&su=Hello%20from%20your%20website" target="_blank" rel="noopener" class="btn btn-primary btn-lg reveal">
+        <a href="https://mail.google.com/mail/?view=cm&to=sougandh7ss@gmail.com&su=Hello%20from%20your%20website" target="_blank" rel="noopener" class="btn btn-glow btn-lg reveal">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           Send a Message
         </a>
       </div>
       <div class="contact-cards reveal">
-        <a href="mailto:sougandh7ss@gmail.com" class="contact-card neon-card-cyan">
-          <div class="cc-icon cyan">
+        <a href="mailto:sougandh7ss@gmail.com" class="contact-card glass-card glow-border-purple">
+          <div class="cc-icon purple">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </div>
           <div>
@@ -543,35 +587,35 @@
           </div>
         </a>
         <div class="social-btn-grid">
-          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-cyan btn-sm">
+          <a href="https://github.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-purple btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub
           </a>
-          <a href="https://linkedin.com/in/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-cyan btn-sm">
+          <a href="https://linkedin.com/in/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-purple btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
-          <a href="https://instagram.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-magenta btn-sm">
+          <a href="https://instagram.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-pink btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
-          <a href="https://x.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-magenta btn-sm">
+          <a href="https://x.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-pink btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             X
           </a>
-          <a href="https://discord.com/users/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-yellow btn-sm">
+          <a href="https://discord.com/users/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-blue btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
             Discord
           </a>
-          <a href="https://t.me/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-yellow btn-sm">
+          <a href="https://t.me/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-blue btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.12 14.53l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.696.056z"/></svg>
             Telegram
           </a>
-          <a href="https://snapchat.com/add/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-cyan btn-sm">
+          <a href="https://snapchat.com/add/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-purple btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .299.044.404.12.18.15.277.395.277.61 0 .195-.089.39-.25.558-.32.32-.74.513-1.124.633-.133.042-.232.069-.333.099-.2.06-.324.1-.447.234-.12.123-.16.27-.107.448l.013.046c.576 1.224 1.637 2.48 3.041 2.897.237.06.394.277.357.517-.098.65-.965 1.112-2.469 1.407-.115.023-.205.09-.25.223l-.023.076c-.06.22-.1.384-.163.59-.063.21-.264.357-.48.357-.062 0-.133-.015-.18-.046-.344-.135-.664-.197-1.011-.197-.363 0-.712.045-1.048.136-.448.14-.876.52-1.356.936-.498.435-1.066.933-1.792.933-.016 0-.031 0-.047-.002-.019.002-.039.002-.058.002-.706 0-1.264-.474-1.77-.933-.474-.409-.895-.795-1.341-.936-.341-.091-.69-.136-1.049-.136-.344 0-.66.06-1.01.196l-.028.01c-.049.03-.119.045-.18.045-.221 0-.428-.152-.485-.358-.06-.19-.1-.347-.158-.576l-.024-.08c-.045-.138-.14-.21-.26-.234-1.505-.299-2.36-.765-2.457-1.407-.035-.24.12-.457.357-.52 1.399-.414 2.468-1.67 3.041-2.896l.015-.046c.055-.18.014-.322-.107-.446-.115-.12-.243-.16-.431-.22-.2-.07-.313-.1-.463-.143-.384-.12-.746-.285-1.009-.505a.87.87 0 01-.245-.55c0-.211.086-.451.283-.605.105-.077.227-.12.396-.12.12 0 .3.02.46.104.375.18.737.299 1.041.299.182 0 .301-.06.39-.09l-.003-.046c-.007-.165-.017-.33-.03-.51l-.003-.06c-.104-1.628-.23-3.654.3-4.848C7.86 1.069 11.216.793 12.206.793z"/></svg>
             Snapchat
           </a>
-          <a href="https://facebook.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-magenta btn-sm">
+          <a href="https://facebook.com/sougandhhhhh" target="_blank" rel="noopener" class="btn btn-outline-pink btn-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 1.092.079 1.375.157v3.322a8.42 8.42 0 00-.731-.026c-1.036 0-1.438.396-1.438 1.428v2.677h3.36l-.384 3.667h-2.976v8.138C19.396 23.063 24 18.04 24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.628 3.874 10.35 9.101 11.691z"/></svg>
             Facebook
           </a>
