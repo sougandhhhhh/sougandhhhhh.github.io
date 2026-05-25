@@ -1391,6 +1391,29 @@ a{color:inherit;text-decoration:none}
   100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}
 }
 
+/* Directional cursor */
+.dir-cursor{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:100000;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .2s ease;
+  will-change:transform;
+  filter:drop-shadow(0 0 6px rgba(168,85,247,.4));
+}
+body:not(.touch) *{cursor:none !important}
+body:not(.touch) a,body:not(.touch) a *,
+body:not(.touch) button,body:not(.touch) button *,
+body:not(.touch) [role="button"],body:not(.touch) [role="button"] *,
+body:not(.touch) input[type="button"],body:not(.touch) input[type="submit"]{
+  cursor:pointer !important;
+}
+body:not(.touch) input,body:not(.touch) textarea,body:not(.touch) select{
+  cursor:text !important;
+}
+
 /* ══════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════ */

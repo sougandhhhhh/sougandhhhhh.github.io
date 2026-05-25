@@ -242,6 +242,63 @@ document.addEventListener('click', (e) => {
   setTimeout(() => container.remove(), 600);
 });
 
+/* ── DIRECTIONAL CURSOR ── */
+(function initCursor() {
+  const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent);
+  if (isMobile) { document.body.classList.add('touch'); return; }
+
+  const cursor = document.createElement('div');
+  cursor.className = 'dir-cursor';
+  cursor.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 50 54" fill="none">' +
+    '<path d="M42.68 41.15L27.51 6.8C26.73 5.03 24.21 5.03 23.39 6.8L7.6 41.15C6.76 42.98 8.53 44.89 10.41 44.2L24.38 39.05C24.88 38.86 25.44 38.86 25.94 39.05L39.81 44.2C41.68 44.89 43.49 42.98 42.68 41.15Z" fill="var(--neon-purple)"/>' +
+    '<path d="M43.71 40.69L28.54 6.34C27.36 3.65 23.58 3.7 22.37 6.33L6.57 40.68C5.31 43.42 7.97 46.3 10.8 45.25L24.77 40.11C25.02 40.01 25.3 40.02 25.55 40.11L39.42 45.25C42.23 46.3 44.93 43.43 43.71 40.69Z" stroke="rgba(168,85,247,.5)" stroke-width="1.5"/>' +
+    '</svg>';
+  document.body.appendChild(cursor);
+
+  let cx = window.innerWidth / 2, cy = -50;
+  let tx = cx, ty = cy;
+  let prevX = cx, prevY = cy;
+  let angle = 0, targetAngle = 0;
+  let visible = false;
+
+  document.addEventListener('mousemove', (e) => {
+    tx = e.clientX;
+    ty = e.clientY;
+    if (!visible) { cx = tx; cy = ty; visible = true; cursor.style.opacity = '1'; }
+  });
+
+  document.addEventListener('mouseleave', () => {
+    visible = false;
+    cursor.style.opacity = '0';
+  });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function tick() {
+    cx = lerp(cx, tx, 0.15);
+    cy = lerp(cy, ty, 0.15);
+
+    const dx = cx - prevX;
+    const dy = cy - prevY;
+    const speed = Math.sqrt(dx * dx + dy * dy);
+
+    if (speed > 0.5) {
+      targetAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+      let diff = targetAngle - angle;
+      if (diff > 180) diff -= 360;
+      if (diff < -180) diff += 360;
+      angle += diff * 0.15;
+    }
+
+    cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -10%) rotate(${angle}deg) scale(${speed > 1 ? 0.92 : 1})`;
+    prevX = cx;
+    prevY = cy;
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+})();
+
 /* ── TERMINAL TYPING EFFECT ── */
 const terminalLines = document.querySelectorAll('.terminal-body .t-line');
 terminalLines.forEach((line, i) => {
