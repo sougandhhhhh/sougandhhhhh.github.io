@@ -202,44 +202,7 @@ sections.forEach(s => sectionObserver.observe(s));
   });
 })();
 
-/* ── SNIPER CLICK EFFECT (Framer-inspired) ── */
-document.addEventListener('click', (e) => {
-  const c = document.createElement('div');
-  c.className = 'click-effect';
-  c.style.left = e.clientX + 'px';
-  c.style.top = e.clientY + 'px';
 
-  const gap = 5, len = 14;
-  [
-    { x: 1, y: 0 }, { x: -1, y: 0 },
-    { x: 0, y: 1 }, { x: 0, y: -1 },
-  ].forEach(d => {
-    const l = document.createElement('div');
-    l.className = 'click-line';
-    const s = d.x * gap, t = d.y * gap;
-    l.style.cssText = d.y === 0
-      ? `width:${len}px;height:2px;left:${s}px;top:-1px`
-      : `width:2px;height:${len}px;left:-1px;top:${t}px`;
-    c.appendChild(l);
-    requestAnimationFrame(() => {
-      l.style.transition = 'opacity .08s ease,transform .35s cubic-bezier(.22,1,.36,1)';
-      l.style.opacity = '1';
-      setTimeout(() => { l.style.transition = 'opacity .3s ease'; l.style.opacity = '0'; }, 250);
-    });
-  });
-
-  for (let i = 0; i < 8; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'click-dot';
-    const a = Math.PI / 6 + i * Math.PI / 4, dist = 28;
-    dot.style.setProperty('--dx', Math.cos(a) * dist + 'px');
-    dot.style.setProperty('--dy', Math.sin(a) * dist + 'px');
-    c.appendChild(dot);
-  }
-
-  document.body.appendChild(c);
-  setTimeout(() => c.remove(), 600);
-});
 
 /* ── DIRECTIONAL CURSOR ── */
 (function initCursor() {
