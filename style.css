@@ -1323,8 +1323,21 @@ a{color:inherit;text-decoration:none}
   font-size:.75rem;
   color:var(--text-dim);
   transition:color var(--transition);
+  position:relative;
 }
-.footer-links a:hover{color:var(--neon-purple)}
+.footer-links a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--neon-purple),var(--neon-pink));
+  transition:width .3s ease;
+  border-radius:1px;
+}
+.footer-links a:hover{color:var(--neon-purple);text-shadow:0 0 8px rgba(168,85,247,.4)}
+.footer-links a:hover::after{width:100%}
 
 /* ══════════════════════════════════════════════
    REVEAL ANIMATIONS (Framer Motion-inspired)
