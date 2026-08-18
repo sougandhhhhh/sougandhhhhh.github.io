@@ -94,7 +94,6 @@ a{color:inherit;text-decoration:none}
     radial-gradient(1px 1px at 150px 700px,#fff 50%,transparent),
     radial-gradient(1px 1px at 450px 750px,#fff 50%,transparent);
   background-size:1000px 800px;
-  animation:twinkle-sm 4s ease-in-out infinite alternate;
 }
 .stars-md{
   background-image:
@@ -111,7 +110,6 @@ a{color:inherit;text-decoration:none}
     radial-gradient(1.5px 1.5px at 950px 650px,#fff 50%,transparent),
     radial-gradient(1.5px 1.5px at 60px 400px,#d8d8ff 50%,transparent);
   background-size:1000px 700px;
-  animation:twinkle-md 6s ease-in-out infinite alternate;
 }
 .stars-lg{
   background-image:
@@ -124,17 +122,13 @@ a{color:inherit;text-decoration:none}
     radial-gradient(2px 2px at 900px 250px,#e8e0ff 50%,transparent),
     radial-gradient(2.5px 2.5px at 450px 450px,#F472B6 50%,transparent);
   background-size:1000px 700px;
-  animation:twinkle-lg 5s ease-in-out infinite alternate;
 }
-
-@keyframes twinkle-sm{from{opacity:.4}to{opacity:.9}}
-@keyframes twinkle-md{from{opacity:.5}to{opacity:1}}
-@keyframes twinkle-lg{from{opacity:.6}to{opacity:1}}
 
 /* ══════════════════════════════════════════════
    SHOOTING STARS
    ══════════════════════════════════════════════ */
 .shooting-stars{
+  display:none;
   position:fixed;
   inset:0;
   z-index:0;
