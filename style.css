@@ -1635,14 +1635,3 @@ html{scrollbar-width:thin;scrollbar-color:#A855F7 #0B0D2E}
   .glass-card{border-color:rgba(168,85,247,.4)}
   .body-text,.tl-desc,.project-desc{color:var(--text)}
 }
-
-/* Reduced motion */
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    animation:none !important;
-    transition:none !important;
-    scroll-behavior:auto !important;
-  }
-  .reveal{opacity:1;transform:none}
-  .shooting-star{display:none}
-}
