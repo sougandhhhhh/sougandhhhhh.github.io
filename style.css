@@ -143,30 +143,39 @@ a{color:inherit;text-decoration:none}
 }
 .shooting-star{
   position:absolute;
-  width:100px;
+  width:140px;
   height:2px;
   background:linear-gradient(90deg,rgba(192,132,252,0),#C084FC 40%,#fff);
   border-radius:2px;
   opacity:0;
   transform:rotate(-35deg);
+  will-change:transform,opacity;
+  backface-visibility:hidden;
 }
 .shooting-star:nth-child(1){
-  top:15%;left:70%;
-  animation:shoot 3s ease-in 1s infinite;
+  top:12%;left:62%;
+  --shoot-x:-70vw;
+  --shoot-y:45vh;
+  animation:shoot 7s ease-in 2.5s infinite;
 }
 .shooting-star:nth-child(2){
-  top:35%;left:40%;
-  animation:shoot 3s ease-in 4s infinite;
+  top:30%;left:38%;
+  --shoot-x:-58vw;
+  --shoot-y:38vh;
+  animation:shoot 8s ease-in 4s infinite;
 }
 .shooting-star:nth-child(3){
-  top:8%;left:85%;
-  animation:shoot 3s ease-in 7s infinite;
+  top:6%;left:86%;
+  --shoot-x:-80vw;
+  --shoot-y:55vh;
+  animation:shoot 6.5s ease-in 5.5s infinite;
 }
 @keyframes shoot{
-  0%{opacity:0;transform:rotate(-35deg) translateX(0)}
-  5%{opacity:1}
-  20%{opacity:0;transform:rotate(-35deg) translateX(-300px)}
-  100%{opacity:0}
+  0%{opacity:0;transform:rotate(-35deg) translate3d(0,0,0)}
+  4%{opacity:1}
+  38%{opacity:1}
+  48%{opacity:0;transform:rotate(-35deg) translate3d(var(--shoot-x),var(--shoot-y),0)}
+  100%{opacity:0;transform:rotate(-35deg) translate3d(var(--shoot-x),var(--shoot-y),0)}
 }
 
 /* ══════════════════════════════════════════════
@@ -629,10 +638,13 @@ a{color:inherit;text-decoration:none}
   display:flex;
   gap:0;
   white-space:nowrap;
-  animation:marquee-scroll 20s linear infinite;
+  animation:marquee-scroll 28s linear infinite;
   width:max-content;
+  will-change:transform;
+  backface-visibility:hidden;
 }
 .marquee-track span{
+  flex-shrink:0;
   font-family:'Orbitron',sans-serif;
   font-size:.8rem;
   font-weight:700;
@@ -1627,8 +1639,10 @@ html{scrollbar-width:thin;scrollbar-color:#A855F7 #0B0D2E}
 /* Reduced motion */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
-    animation-duration:0.01ms !important;
-    transition-duration:0.01ms !important;
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
   }
   .reveal{opacity:1;transform:none}
+  .shooting-star{display:none}
 }
